@@ -1,0 +1,360 @@
+
+.tabs_wrapper ul{
+    position: relative;
+    margin: 0 -32px;
+    padding: 0 32px;
+    border-bottom: 2px solid #C2E4EF;
+}
+
+.tabs_wrapper ul::before{
+    content: "";
+}
+
+.nav_link{
+  color:var(--dark-bluetext);
+  font-size: 16px;
+  font-weight: 700;
+
+}
+
+
+.company_message_box {
+    padding: 32px 0px;
+    margin: 0 auto;
+}
+.career_roadway_title {
+    padding: 17px 21px;
+}
+.company_message_title {
+    color: #25324B;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+} 
+.message_info {
+    color: #7C8493;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 8px;
+}
+.Roadway_text {
+    color: #25324B;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.card_box_white{
+    padding: 25px;
+    border:1px solid #D6DDEB;
+    height: 100%;
+    background-color: #fff;
+}
+.dark_box{
+    background-color: #5FA9C0;
+    padding: 25px;
+    height: 100%;
+
+}
+.red_box{
+    background-color: #872923;
+    padding: 25px;
+    height: 100%;
+
+}
+.red_box .box_heading{
+    color: #fff;
+}
+.red_box .count_digit{
+    color: #fff;
+}
+.dark_box .box_heading{
+    color: #fff;
+}
+.dark_box .count_digit{
+    color: #fff;
+}
+.box_heading{
+    color:var(--dark-bluetext);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.count_digit{
+    color:var(--dark-bluetext);
+    font-size: 72px;
+    font-weight: 700;
+}
+
+.img_box_right{
+    text-align: right;
+}
+
+.box_light{
+    background-color: #C2E4EF;
+    height: 100%;
+    padding: 25px;
+}
+
+
+
+
+
+/* Recent_Lessons_History_css */
+.Recent_Lessons_History_wrapper {
+    margin-bottom: 24px;
+    margin-top: 40px;
+}
+
+.Recent_Lessons_History_block {
+    border: 1px solid#D6DDEB;
+    background: #FFF;
+    padding-bottom: 24px;
+}
+
+.Recent_Lesson_text {
+    color: #25324B;
+    font-size: 20px;
+    padding: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.Recent_Lessons_head_box {
+    border-bottom: 1px solid#D6DDEB;
+}
+
+.sign_type .btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    color: #26395B;
+    background: none;
+    border: none;
+}
+
+.more_icon_button svg {
+    width: 24px;
+    height: 24px;
+    fill: #25324B;
+}
+
+.dropdown_toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border: none !important;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+
+
+
+
+.Load_More_btn {
+    text-align: center;
+}
+
+.Load_More_btn a {
+    color: #2A3858;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.Load_More_btn a:hover {
+    color: #5FA9C0;
+}
+
+.Load_More_btn a:hover .more_icon_button svg {
+    fill: #5FA9C0;
+}
+
+.comapny_img img {
+    width: 64px;
+    object-fit: cover;
+    height: 64px;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0 !important;
+    border: none;
+    box-shadow: none;
+}
+
+.dropdown_toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border: none !important;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+.dropdown_toggle{
+    border: none;
+}
+.dropdown_menu_end{
+    padding: 0 !important;
+}
+.more_icon_button svg {
+    width: 24px;
+    height: 24px;
+} 
+
+
+.course_usr_name {
+    color: #25324B;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.course_usr_box {
+    color: #25324B;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.Lesson_neme {
+    color: #7C8493;
+    font-size: 16px;
+    ;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.computer_network_box {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.tebal_box {
+    padding: 24px;
+}
+
+.table {
+    margin: 0;
+}
+
+.main_comaputer_wrapper_block {
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    background: #C2E4EF;
+}
+
+.main_comaputer_wrapper_block_second {
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    background: rgb(245, 245, 245);
+}
+
+.tebal_box td{
+    white-space: nowrap;
+}
+/* Recent_Lessons_History_end */
+.tbl_mobile_view  .mobile_link a{
+    border: 1px solid var(--dark-blue);
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.unlocked{
+    border: 1px solid #26A4FF !important;
+    color: #26A4FF;
+}
+.unlocked:hover{
+    color: #26A4FF;
+}
+.job_details{
+    display: flex;
+    column-gap: 25px;  
+    color: #7C8493;
+    font-weight: 500;  
+    font-size: 16px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+.job_details span{
+    position: relative;
+}
+.job_details span::before{
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: #7C8493;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -12px;
+    border-radius: 20px;
+}
+.job_details span:first-child:before{
+    display: none;
+}
+.apply_date{
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--dark-blue);
+}
+@media (max-width: 575.98px){
+    .tabs_wrapper ul {
+        position: relative;
+        margin: 0px 0;
+        padding: 0 0;
+}
+    .tbl_mobile_view .main_comaputer_wrapper_block {
+       position: relative;
+       flex-direction: column;
+       gap: 15px;
+       align-items: flex-start;
+       padding: 15px;
+       border-radius: 0;
+    }
+    .tbl_mobile_view .main_comaputer_wrapper_block_second {
+        position: relative;
+       flex-direction: column;
+       gap: 15px;
+       align-items: flex-start;
+       padding: 15px;
+       border-radius: 0;
+    }
+    .tbl_mobile_view .computer_network_box {
+        display: flex;   
+        align-items: self-start;
+       flex-direction: column;
+    }
+    .tbl_mobile_view .dropdown{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .land_ar .tbl_mobile_view .dropdown{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: unset;
+    }
+    .tbl_mobile_view  .mobile_link{
+        position: absolute;
+        right: 15px;
+        bottom: 40px;
+    }
+}

@@ -1,0 +1,384 @@
+
+/*  */
+.login_right_content {
+	position: fixed;
+	object-fit: cover;
+	left: 0;
+	height: 100%;
+	width: 50%;
+}
+.login_signup_pages {
+	display: flex;
+	height: 100vh;
+}
+.login_sign_up_block {
+	max-width: 564px;
+	margin: 40px auto;
+}
+.loginTitleBox {
+	text-align: center;
+	margin-bottom: 45px;
+}
+.login_right_content img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+.forget_pass {
+	color: var( --oceantext);
+	font-size: 16px;
+	font-weight: 700;
+	text-decoration: none;
+}
+.forget_passwordBox {
+	margin: 22px 0;
+}
+.Account_Switch {
+	margin: 0;
+	color: #202430;
+	font-size: 16px;
+	font-weight: 400;
+}
+.SwitchBox_SignUp {
+	text-align: flex-start;
+	padding-top: 23px;
+}
+.SignUp_select {
+	color: var( --dark-bluetext);
+    font-weight: 600;
+    text-decoration: none;	
+}
+.form_label {
+	margin-bottom: 5px;
+	color: #515B6F;
+	font-size: 16px;
+	font-weight: 600;
+}
+ .form_control::placeholder {
+    color: #A8ADB7;
+	opacity: 1;
+}
+ .form_control {
+	width: 100%;
+	padding: 10px 20px 10px 16px;
+	background-color: var( --white);
+	border: 1px solid #D6DDEB;
+	border-radius: 4px;
+	color: #333;
+	font-size: 16px;
+	font-family: 'Montserrat';
+	height: 52px;
+	font-weight: 300;
+}
+.form_control:focus-visible{
+	outline: none;
+}
+.form_control:focus{
+    box-shadow: none;
+}
+.btn_primary {
+	background: var( --dark-blue);
+	color: var( --white);
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 13px 50px;
+	border: 1px solid transparent;
+	border-radius: 0;
+}
+.btn_primary:hover {
+  background: var(--ocean);
+  color: var(--white);
+}
+
+.btn_secondary{
+    background: transparent;
+	color: var( --dark-blue);
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 13px 50px;
+	border: 1px solid var(--dark-blue);
+	border-radius: 0;
+}
+.btn_secondary:hover{
+    background: var( --dark-blue);
+	color: var( --white); 
+}
+.fullsize {
+  width: 100%;
+}
+
+.form_group {
+    margin-bottom: 20px;
+}
+/*  */
+
+
+
+/* sign up page css start */
+.sign_type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.sign_type .btn_secondary {
+    background: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    color: var( --dark-bluetext);
+    border: 0;
+    border-radius: 0;
+}
+.btn_check {
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+}
+.sign_type .btn_check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn_check)+.btn:active {
+    color: var( --dark-bluetext);
+    background-color: #B9CFF7;
+    border-color: #B9CFF7;
+}
+.sign_type .btn_secondary:hover {
+    color: var( --dark-bluetext);
+    background-color: #B9CFF7;
+}
+/* upload img */
+.signup_upload .upload_img_block {
+    padding-bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.signup_upload .avatar_upload {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    max-width: 88px;
+    height: 88px;
+    flex: 0 0 88px;
+    border: 2px solid var( --dark-blue);
+    border-radius: 50%;
+}
+
+.signup_upload .avatar_upload .avatar_edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+
+.signup_upload .avatar_upload .avatar_edit input {
+    display: none;
+}
+
+.signup_upload .avatar_upload .avatar_preview {
+    width: 78px;
+    height: 78px;   
+    position: relative;
+    border-radius: 100%;
+    background: var( --dark-blue) url(../public/img/camera.png);
+    background-repeat: no-repeat;
+    background-position: center;  
+    overflow: hidden;
+    }
+    .signup_upload .avatar_upload .avatar_preview img{
+        height: 100%;
+        object-fit: cover;
+    }
+    .signup_upload .avatar_upload .avatar_preview>div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.signup_upload .upload_btn_label label {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* upload img End */
+.custom_radio{
+    display: flex;
+    column-gap: 24px;
+}
+.custom_radio .form_check {    
+    margin: 0;
+    padding: 0;
+}
+.form-select {   
+    background-size: 18px 20px;  
+    stroke: #25324B;
+}
+/* sign up page csss end */
+
+.history_back {
+	font-size: 31px;
+	margin-right: 10px;
+}
+
+/* Custom Radio */
+.custom_radio [type="radio"]:checked,
+.custom_radio [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+.custom_radio [type="radio"]:checked + label,
+.custom_radio [type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    line-height: 24px;
+    display: inline-block;
+    color: var( --dark-bluetext);
+    font-weight: 700;
+    font-size: 16px;
+}
+.custom_radio [type="radio"]:checked + label:before,
+.custom_radio [type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #b5b5b5;
+    border-radius: 100%;
+    background: var( --white);
+}
+.custom_radio [type="radio"]:checked + label::after, .custom_radio [type="radio"]:not(:checked) + label::after {
+	content: '';
+	width: 12px;
+	height: 12px;
+	background: var( --dark-blue);
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	border-radius: 100%;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.custom_radio  [type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.custom_radio  [type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+/*  */
+
+
+/*  */
+
+.history_back {
+	font-size: 31px;
+	margin-right: 10px;
+}
+.short_desc {
+	color: rgba(32,36,48,0.69);
+	font-size: 16px;
+	font-weight: 500;
+	margin: 0 0 20px;
+}
+
+
+/* poppup css start */
+ .successfull_popup .modal_body{
+    padding: 75px 40px;
+    text-align: center;
+ }
+ .successfull_popup .modal_content{
+border-radius: 28px;
+border: 0;
+ }
+ .icon_block{
+    max-width: 115px;
+    max-height: 115px;
+    min-height: 115px;
+    min-width: 115px;
+    background-color: var( --oceantext);
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .modal_inner h3{
+    margin: 32px 0;
+    font-size: 28px;
+    font-weight: 700;
+ }
+ .modal_inner .btn_primary{
+    border-radius: 14px;
+
+ }
+
+ .modal_inner .btn_secondary{
+    border-radius: 14px;
+    margin-top: 15px;
+ }
+
+/* popup css end */
+
+
+
+.show_pass{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    cursor: pointer;
+}
+
+.mobile_device{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.mobile_device a img{
+    height: 60px;
+}
+@media (max-width: 991.98px){
+.btn_primary {
+    font-size: 15px;
+    padding: 9px 20px;
+}
+
+}
+
+@media (max-width: 767.98px){
+    
+.mobile_device{
+    display: block;
+    margin-bottom: 30px;
+}
+.login_right_content {
+    display: none;
+}
+.form_control {
+    height: 48px;
+}
+}
+
+@media (max-width: 575.98px){
+.successfull_popup .modal_body {
+    padding: 55px 20px;
+    text-align: center;
+}
+}

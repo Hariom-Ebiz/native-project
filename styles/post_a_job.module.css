@@ -1,0 +1,1510 @@
+.post_job_title {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: #25324B;
+    margin: 5px 0 33px;
+}
+
+.post_job_title svg {
+    margin-right: 10px;
+}
+
+.modal_head_block{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.modal_heading{
+    font-size:20px;
+    margin-bottom: 0;
+}
+
+
+.steps_box {
+    border: 1px solid #C2E4EF;
+    border-radius: 4px;
+    padding: 14px 24px;
+}
+
+.steps_trake {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icon_box {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C2E4EF;
+}
+
+.icon_box svg {
+    color: #7C8493;
+}
+
+.user_view .icon_box {
+    background-color: #25324B;
+}
+
+.user_view .icon_box svg {
+    color: #fff;
+}
+
+.current_view .icon_box {
+    background-color: #5FA9C0;
+}
+.current_view .icon_box svg {
+    color: #fff;
+}
+.current_view .step_type {
+    color: #5fa9c0;
+}
+.current_view .step_number {
+    color: #5fa9c0 !important;
+}
+.current_view .icon_box svg {
+    color: #fff;
+}
+
+.current_view .step_number,
+.user_view .step_number {
+    color: #2A3858;
+}
+
+.step_number {
+    font-size: 16px;
+    font-weight: 400;
+    color: #A8ADB7;
+    margin-bottom: 5px;
+}
+
+.step_type {
+    font-size: 17px;
+    font-weight: 700;
+    color: #25324B;
+    margin-bottom: 0;
+}
+
+.step_content {
+    flex: auto;
+    border-right: 1px solid #C2E4EF;
+}
+
+.step_col:last-child .step_content{
+    border: none;
+}
+
+.inner_box {
+    padding: 32px 0px 24px;
+    border-bottom: 1px solid #C2E4EF;
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inner_box_title {
+    color: #25324B;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.inner_box_subtitle {
+    color: #7C8493;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    max-width: 80%;
+}
+
+.job_details_box {
+    padding: 32px 0px 0px;
+    border-bottom: 1px solid #C2E4EF;
+}
+
+.job_details_box:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.job_details_box:last-child .row_gap {
+    padding-bottom: 0;
+}
+
+.form_control {
+    border-color: #C2E4EF;
+    border-radius: 0;
+    height: 50px;
+}
+
+.form_control::placeholder {
+    color: #A8ADB7;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input_sub_text {
+    color: #7C8493;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.label_text {
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.input_sub_lebal {
+    color: #515B6F;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.row_gap {
+    padding-bottom: 25px;
+}
+
+.select_options_box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.select_options_box:last-child {
+    margin-bottom: 0;
+}
+
+.company_text {
+    color: #A8ADB7;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.post_job_right_block .input_sub_lebal {
+    font-size: 16px;
+    font-weight: 500;
+    color: #515B6F;
+}
+
+.post_job_right_section select {
+    border-color: #C2E4EF;
+    border-radius: 0;
+    height: 50px;
+    color: #161d46;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.career_level_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.level_box {
+    border: 1px solid #5FA9C0;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.level_title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2A3858;
+    margin-bottom: 10px;
+}
+
+.level_sub_title {
+    font-size: 12px;
+    font-weight: 400;
+    color: #2A3858;
+    margin-bottom: 0;
+}
+
+.career_level_box input {
+    position: absolute;
+    opacity: 0;
+}
+
+.career_level_box input:checked+.level_box {
+    background-color: #5FA9C0;
+}
+
+.career_level_box input:checked+.level_box .level_title,
+.career_level_box input:checked+.level_box .level_sub_title {
+    color: #fff;
+}
+
+    
+.active {
+    background-color: #5FA9C0;
+    color: #fff;
+}
+.level_box.active .level_title,
+.level_box.active .level_sub_title{
+    color: #fff;
+}
+
+
+
+
+.month_change_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.month_change_box .label_text {
+    margin-bottom: 0;
+}
+
+.month_change_title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #5FA9C0;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.hide_selary {
+    font-size: 16px;
+}
+
+.post_job_right_section textarea {
+    border-color: #C2E4EF;
+    border-radius: 0;
+    color: #161d46;
+    font-size: 16px;
+    font-weight: 500;
+    height: 152px;
+}
+
+.post_job_right_section textarea::placeholder {
+    color: #A8ADB7;
+
+}
+
+.next_step_btn_block {
+    margin-top: 24px;
+    text-align: end;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.next_btn {
+    background-color: var(--dark-blue);
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    padding: 14px 27px !important;
+}
+
+.next_btn:hover {
+    background-color: var(--ocean);
+    color: var(--white);
+
+}
+
+.salary_range_track {
+    border: 1px solid #C2E4EF;
+    border-radius: 0;
+    height: 50px;
+    color: #A8ADB7;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    max-width: 220px;
+}
+
+.range_input {
+    border: none !important;
+    outline: none !important;
+    color:  #161d46;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 5px;
+    width: 100%;
+}
+.range_input::placeholder{
+    color: #A8ADB7
+}
+.salart_to_div {
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.salary_range_box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 24px;
+
+}
+
+.dlt_max_box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.dlt_maxText {
+    font-size: 16px;
+    font-weight: 400;
+    color: #A8ADB7;
+    margin-bottom: 0;
+}
+
+.dlt_right_maxText {
+    font-size: 16px;
+    font-weight: 400;
+    color: #515B6F;
+    margin-bottom: 0;
+}
+
+.add_key_btn {
+    border: 1px solid #5FA9C0;
+    background-color: transparent;
+    border-radius: 0;
+    color: #2A3858;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 9px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+}
+
+.add_key_btn:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-color: var(--dark-blue);
+}
+
+.add_key_btn svg {
+    margin-right: 8px;
+}
+
+.add_skills_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+
+.key_tag {
+    background-color: #F8F8FD;
+    color: #2A3858;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 18px;
+}
+
+.key_tag svg {
+    margin-left: 8px;
+}
+
+.save_post_btn {
+    border: 1px solid #CCCCF5;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2A3858;
+    padding: 14px 27px;
+    min-width: 220px;
+    text-align: center;
+
+
+}
+
+.post_now_btn {
+    min-width: 140px;
+    text-align: center;
+    display: block;
+    /* margin-bottom: 10px; */
+    padding: 7px 13px !important;
+    font-size: 15px;
+}
+
+.save_post_btn:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-color: var(--dark-blue);
+}
+
+.month_change_box Select {
+    border: none;
+    background-image: none;
+    padding-right: 10px;
+}
+
+.month_change_box Select:focus {
+    box-shadow: unset;
+}
+
+
+/* DETAILS PAGE START */
+.social_head {
+    border: 1px solid #D6DDEB;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left_box {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+
+.social_head_title {
+    color: #25324B;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.edit_job {
+    background-color: transparent;
+    border: 1px solid #5FA9C0;
+    padding: 12px 15px;
+    color: #2A3858;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.edit_job:hover {
+    background: var(--ocean);
+    color: var(--white);
+}
+
+.edit_job svg {
+    margin-right: 10px;
+}
+
+.box_title {
+    color: #25324B;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.details_page_main {
+    margin-top: 32px;
+}
+
+.requirements_list {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.requirements_list_items {
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.requirements_list_items svg {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+}
+
+.details_content_box {
+    margin-bottom: 30px;
+}
+
+.job_details_progressBar {
+    background-color: #F8F8FD;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.role_list {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.role_list_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.job_tag {
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.job_sub_tag {
+    color: #25324B;
+    font-size: 16px;
+    font-weight: 600;
+    width: 50%;
+    text-align: end;
+}
+
+.job_about_box:not(:last-child) {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #C2E4EF;
+    margin-bottom: 40px;
+}
+
+.statusBox {
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 24px;
+}
+
+.statusItems {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 80px;
+    border: 1px solid;
+
+}
+
+.greenBtn {
+    background-color: rgba(86, 205, 173, .1);
+    color: #56CDAD;
+    border: none;
+    position: relative;
+
+}
+
+.greenBtn::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #C2E4EF;
+    right: -8px;
+    top: 0;
+}
+
+.yellowBtn {
+    color: #F3CF5B;
+    background-color: rgb(235 133 51 / 10%);
+}
+
+.blueBtn {
+    color: #2A3858;
+}
+
+.skills_tags_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-top: 24px;
+}
+
+.skills_tags {
+    color: #2A3858;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 5px 15px;
+    background-color: #F8F8FD;
+}
+
+.left_box img {
+    width: 50px;
+    height: 50px;
+
+}
+
+.land_ar .edit_job svg {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.land_ar .greenBtn::after {
+    right: unset;
+    left: -8px;
+}
+
+.icon_wrapper {
+    position: relative;
+}
+
+.user_name_later {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    display: flex;
+    margin-bottom: 0;
+    height: 100%;
+    line-height: normal;
+    text-transform: capitalize;
+    align-items: center;
+    justify-content: center;
+}
+
+/* DETAILS PAGE END */
+
+
+/* POST JOB STEP THREE */
+.psychomet_scoreDiv {
+    color: #2A3858;
+    font-size: 20px;
+    font-weight: 700;
+    background: rgba(194, 228, 239, 0.27);
+    padding: 6px 10px;
+    margin-bottom: 38px;
+}
+
+.choose_careerBlock {
+    border: 1px solid #C2E4EF;
+    padding: 20px 11px 0px 11px;
+}
+
+.choose_valueTitle {
+    color: #141519;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.choose_valueContent {
+    border-radius: 7px;
+    border: 1px solid #C6D6EE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 8px;
+    margin-bottom: 4px;
+}
+
+/* .interest_valueBox .choose_valueContent {
+    justify-content: center;
+} */
+
+.choose_valueScroll {
+    height: 288px;
+    overflow-y: scroll;
+    margin: 0;
+    padding-right: 8px;
+}
+
+.choose_valueScroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.choose_valueScroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.choose_valueScroll::-webkit-scrollbar-thumb {
+    background-color: #C1C1C1;
+    border-radius: 15px;
+}
+
+.choose_availableText {
+    color: #A8ADB7;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 14px;
+}
+
+.five_valueScroll {
+    border-radius: 8px;
+    padding: 11px 5px;
+    margin: 0;
+    height: 220px;
+}
+.extra_content{
+    height: auto;
+    margin-bottom: 10px;
+}
+.five_valueContent {
+    border-radius: 6px;
+    background: #FFF;
+    box-shadow: 0px 0px 12.443px 0px rgba(0, 0, 0, 0.09);
+    padding: 7px;
+    color: #081131;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.personality_type_Item {
+    background: rgba(168, 173, 183, 0.10);
+    color: #7C8493;
+    font-size: 16px;
+    padding: 5px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.personality_type_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.personality_typeText {
+    font-size: 16px;
+    color: #141519;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.personalityType_box {
+    border-bottom: 1px solid rgba(194, 228, 239, 0.50);
+    padding-bottom: 17px;
+    margin-bottom: 17px;
+}
+.personal_typeCheck {
+    border: 1px solid #F8F8FD;
+    padding: 8px 16px;
+    cursor: pointer;
+    background: #F8F8FD;
+    color: #2A3858;
+}
+.commanding_type_list input:checked + .personal_typeCheck {
+    border: 1px solid #2A3858;
+    
+    border-right: none !important;
+}
+
+
+.infoTooltip{
+    border: 1px solid #F8F8FD;
+}
+
+.commanding_type_list input:checked ~ .infoTooltip {
+    border: 1px solid #2A3858;
+    border-left: none !important;
+}
+
+.commanding_type_list .form_check input{
+    display: none;
+}
+.commanding_type_list{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.commanding_typeText{
+    color: #2A3858;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.commanding_typeStep{
+    position: relative;
+    padding-left: 34px;
+    height: 360px;
+    margin-bottom: 0;
+    overflow-y: scroll;
+    
+}
+.commanding_typeStep::-webkit-scrollbar {
+    width: 5px;
+}
+
+.commanding_typeStep::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.commanding_typeStep::-webkit-scrollbar-thumb {
+    background-color: #C1C1C1;
+    border-radius: 15px;
+}
+.commanding_typeLi{
+    padding-bottom: 33px;
+    position: relative;
+}
+.commanding_typeLi::before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 1px;
+    border: 1px dashed #2A3858;
+    left: -22px;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.commanding_typeNumber{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #2A3858;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -33px;
+    top: 0;
+    font-size: 15px;
+    z-index: 2;
+}
+.personality_closeBtn{
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    color: #7C8493;
+}
+.weighting_scoreBox{
+    margin-top: auto;
+}
+.weighting_box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.form_labelWeighting{
+    color: #7C8493;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.form_InputFlex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.form_leftWeighting{
+    color: #25324B;
+    font-size: 16px;
+    font-weight: 500;
+}
+.form_recommendedText{
+    color: #A8ADB7;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0;
+    display: inline-block;
+}
+.form_scoreWeighting{
+    color: #25324B;
+    font-size: 19px;
+    font-weight: 500;
+    margin: 0;
+}
+.form_InputWeighting{
+    border-radius: 7px;
+    border: 1px solid #C6D6EE;
+    background: rgba(248, 248, 253, 0.50);
+    padding: 6px 10px;
+    max-width: 140px;
+}
+.form_InputWeighting:enabled::-webkit-inner-spin-button {
+    opacity: 1;
+}
+.inputScore_flex{
+    display: flex;
+    align-items:start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.inputScore{
+    border-radius: 7px;
+    border: 1px solid #C6D6EE;
+    background: #FFF;
+    padding: 6px 10px;
+    color: #081131;
+    }
+
+.input_groupflex .inputScore{
+    background: rgba(226, 234, 246, 0.20);
+    padding-right: 42px;
+    max-width: 135px;
+}
+.input_groupflex{
+    position: relative;
+}
+.inputScore_presnt{
+    border-radius: 0px 7px 7px 0px;
+    background: rgba(198, 214, 238, 0.30);
+    padding: 7px;
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.inputScore_box{
+    padding-bottom: 15px;
+}
+
+.extra_title{
+    color: #5FA9C0;
+  }
+/*  */
+.psychomet_scoreBlock{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.row_delete{
+    background-color: var(--dark-blue);
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    padding: 10px 27px !important;
+}
+.row_delete:hover{
+    background: var(--ocean);
+    color: var(--white);
+}
+.inner_box .next_btn{
+    /* padding: 8px 27px !important; */
+    font-weight: 500;
+}
+
+.screening_assessment_title{
+    color: #2A3858;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.screening_assessment_top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.screening_assessment_content{
+    max-width: 75%;
+}
+.screening_assessment_content button{
+    text-transform: capitalize;
+}
+.screening_assessment_content p{
+    margin-bottom: 0;
+    font-weight: 500;
+}
+.post_job_inner_btn{
+    display: flex;
+    flex-direction: column;
+    /* gap: 0px !important; */
+}
+
+.like_to_work_input{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.like_to_work_input .form_control{
+    max-width: 100%;
+    width: 100%;
+}
+
+.location_heading{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.screening_questions_add_box{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 19px;
+}
+
+.screening_questions_add_box label{
+    padding: 5px 0;
+}
+.delete_btn{
+    padding: 14px 24px;
+    font-size: 16px;
+    margin-top: 34px;
+}
+.other_input_track{
+    border: 1px solid #C2E4EF;
+    margin-top: 10px;
+    padding-left: 10px;
+    height: 100px;
+    padding-bottom: 70px;
+}
+.screening_questions_add_main{
+    width: 100%;
+}
+.btn_col_box{
+    flex-direction: column;
+}
+@media (min-width: 1200px) and (max-width: 1440px) {
+    .use_default_btn{
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+    .screening_assessment_content {
+        max-width: 72%;
+    }
+    .step_type {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .inner_box_title {
+        font-size: 16px;
+    }
+
+    .input_sub_lebal {
+        color: #515B6F;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .post_job_title {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: #25324B;
+        margin: 5px 0 33px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .icon_box {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+    }
+
+    .steps_trake {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .screening_assessment_top {
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .use_default_btn{
+        font-size: 16px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 16px;
+    }
+    .screening_assessment_content {
+        max-width: 100%;
+    }
+    .screening_assessment_content p {
+        padding-top: 25px;
+    }
+    .save_post_btn {
+        padding: 10px 20px;
+        min-width: 180px;
+    }
+
+    .post_now_btn {
+        min-width: 180px;
+        padding: 10px 20px !important;
+
+    }
+
+    .next_step_btn_block {
+        gap: 15px;
+    }
+
+    .step_type {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .inner_box_title {
+        font-size: 16px;
+    }
+
+    .input_sub_lebal {
+        color: #515B6F;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .post_job_title {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: #25324B;
+        margin: 5px 0 33px;
+    }
+
+   
+
+    .step_col {
+        width: 250px;
+    }
+
+    .post_job_right_section select {
+        height: 42px;
+    }
+
+    .select_options_box {
+        margin-bottom: 10px;
+    }
+
+    .step_number {
+        font-size: 14px;
+    }
+
+    .form_control {
+        height: 42px;
+    }
+
+    .level_title {
+        margin-bottom: 0px;
+    }
+
+    .salary_range_track {
+        max-width: 200px;
+    }
+
+    .post_job_right_section textarea {
+        height: 110px;
+    }
+
+    .next_btn {
+        font-size: 16px;
+        padding: 10px 22px;
+    }
+
+    .social_head_title {
+        font-size: 24px;
+    }
+
+    .left_box {
+        gap: 16px;
+    }
+
+    .box_title {
+        font-size: 20px;
+    }
+
+    .social_head {
+        padding: 14px;
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .inner_box {
+        align-items: self-start;
+    }
+    .social_head_title {
+        font-size: 24px;
+    }
+.choose_valueScroll{
+    margin-bottom: 25px;
+}
+.personality_type_Item {
+    font-size: 15px;
+}
+.personal_typeCheck{
+    padding: 6px 10px;
+    font-size: 14px;
+}
+.five_valueScroll{
+    margin: 0;
+    margin-bottom: 15px;
+}
+.form_scoreWeighting {
+    font-size: 17px;
+}
+.form_InputWeighting {
+    max-width: 120px;
+}
+.form_recommendedText , .form_labelWeighting ,.form_leftWeighting {
+    font-size: 15px;
+}
+.psychomet_scoreDiv {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+.commanding_typeText{
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+    .left_box img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .edit_job {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .job_about_box:not(:last-child) {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
+
+    .skills_tags {
+        font-size: 14px;
+        padding: 5px 12px;
+    }
+
+    .job_sub_tag,
+    .job_job_tag {
+        font-size: 14px;
+    }
+
+    .role_list_items {
+        margin-bottom: 7px;
+    }
+
+    .skills_tags_box {
+        margin-top: 15px;
+    }
+
+    .statusBox {
+        margin-top: 15px;
+    }
+
+    .left_box {
+        gap: 15px;
+    }
+
+    .social_head {
+        padding: 14px;
+    }
+
+    .post_job_title {
+        font-size: 22px;
+        margin: 10px 0 26px;
+    }
+
+    .post_job_title svg {
+        margin-right: 7px;
+        width: 20px;
+    }
+
+    .salary_range_box {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .salary_range_track {
+        max-width: 160px;
+    }
+
+    .next_step_btn_block {
+        justify-content: center;
+        gap: 15px;
+    }
+
+}
+
+.skills_box{
+    margin-bottom: 24px;
+}
+.skills_list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0;
+}
+.skills_list li{
+    background-color: #F8F8FD;
+    color: #2A3858;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 4px 12px;
+}
+
+.form_control_skill {
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    height: 42px;
+    color: var(--dark-bluetext);
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+  
+}
+.step_col:nth-child(1),
+.step_col:nth-child(2) {
+    width: 23%;
+}
+
+.step_col:nth-child(3){
+    width: 29%;
+}
+
+.modalBox{
+    --bs-modal-width: 404px;
+    margin: auto;
+}
+
+.unlockPopupContent{
+    padding: 50px 50px 50px 50px;
+    text-align: left;
+    border: none;
+   
+}
+
+
+
+
+
+
+
+
+@media (max-width: 575.98px) {
+    .post_job_inner_btn{
+        width: 100%;
+    }
+    .post_job_inner_btn button{
+        min-width: 100%;
+    }
+
+    .post_a_job_use_default_btn__NvaPU {
+        top: 30px;
+        left: 0;
+        right: unset;
+    }
+    .screening_assessment_content p {
+        padding-top: 55px;
+    }
+    .form_InputWeighting {
+        max-width: 200px;
+    }
+    .save_post_btn {
+        font-size: 14px;
+        padding: 10px 10px;
+        min-width: 150px;
+    }
+    .input_groupflex .inputScore{
+        max-width: 100px;
+        min-width: 100px;
+    }
+    .inputScore{
+        width: 100%;
+    }
+    .next_btn {
+        font-size: 14px;
+        min-width: 100px;
+        padding: 10px 10px !important;
+        width: 100%;
+    }
+
+    .social_head_title {
+        font-size: 19px;
+    }
+
+    .left_box {
+        gap: 10px;
+    }
+
+    .requirements_list_items {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .inner_box {
+        padding: 22px 0px 15px;
+    }
+
+    .job_details_box {
+        padding: 22px 0px 0px;
+    }
+
+    .inner_box_subtitle {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .post_job_left_section {
+        padding-bottom: 20px;
+    }
+
+    .company_text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .label_text {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+}
+
+@media (max-width: 1299.98px){
+.step_col:nth-child(1),
+.step_col:nth-child(2) {
+    width: 250px;
+}
+
+.step_col:nth-child(3){
+    width: 300px;
+}
+.steps_box {
+    overflow: auto;
+}
+
+.row_flex_wrap {
+    flex-wrap: nowrap;
+}
+}

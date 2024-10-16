@@ -1,0 +1,313 @@
+
+.LeftarrowIcon {
+    margin-right: 24px;
+}
+.applicant_details_heading {
+    color: #25324B;
+    font-size: 24px;
+    font-weight: 700;
+}
+.applicant_details_text{
+    margin-bottom: 25px;
+}
+.company_profile_heading{
+    color: #25324B;
+    font-size: 16px;
+    font-weight: 700;
+}
+.company_profile_description{
+    color: #7C8493;
+    font-size: 16px;
+    font-weight: 400;
+}
+.EditProfileStepContent{
+    padding:0 17px; 
+}
+.company_profile_edit:not(:last-child){
+    padding-bottom: 60px;
+}
+.imgInput{
+    display: none;
+}
+.uploadImgBlock{
+    display: flex;
+    gap: 10px 45px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.uploadImgBlockPreant{
+    padding-left: 100px;
+}
+.uploadLabel{
+    padding: 9px 23px;
+    cursor: pointer;
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    border-radius: 4px;
+    background: #132B3E;
+}
+.uploadLabel:hover{
+    background: #5fa9c0;
+}
+.next_btn{
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 9px 23px;
+    text-transform: capitalize;
+
+}
+.next_prev_btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.drapAndDrop label {
+    height: 145px;
+    width: 380px;
+    border-color: #2A3858;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #F8F8FD;
+    align-content: center;
+}
+.drapAndDrop label > div {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+.drapAndDrop span{
+    width: 100%;
+    font-size: 16px !important;
+    font-weight: 500;
+    color: #25324B;
+
+}
+.drapAndDrop svg{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.drapAndDrop svg path{
+    fill: #2A3858;
+}
+.ImgBox{
+    width: 95px;
+    height: 113px;
+}
+.ImgBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* STEP 2 FORM CSS STAT */
+.form_label{
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.form_control {
+    width: 100%;
+    padding: 10px 20px 10px 16px;
+    background-color: #F8FBFD;
+    border: 1px solid #C2E4EF;
+    border-radius: 0px;
+    color: #333;
+    font-size: 16px;
+    outline: none !important;
+}
+.form_control::placeholder{
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.steps_form_select {
+    background-image: url('data:image/svg+xml,<svg width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5728 1.10742L8.57275 8.10742L1.57275 1.10742" stroke="%2325324B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'); background-repeat: no-repeat no-repeat;
+    background-size: auto;
+    appearance: none;
+    background-position: 99% center;
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    background-size: 15px;
+}
+.Arrow{
+    background-position: 96% center;
+
+}
+.editorFooter{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 2px;
+}
+.left_text{
+    color: #A8ADB7;
+    font-size: 16px;
+    font-weight: 400;
+}
+.right_text{
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 500;
+}
+.custom_checkbox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.custom_checkbox input{
+    margin-right: 0 !important;
+}
+.custom_checkbox label{
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 700;
+}
+.checkbox_group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+/* STEP 2 FORM CSS END */
+.countryCode_input{
+    background-color: #F8FBFD;
+    border: 1px solid #C2E4EF;
+    padding: 10px 20px 10px 16px;
+}
+.countryCode_input input {
+    background: transparent;
+    border: none !important;
+    outline: none !important;
+}
+
+
+
+/* RTL CSS START */
+.land_ar .uploadImgBlock {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+.land_ar .uploadImgBlockPreant {
+    padding-left: 0;
+    /* padding-right: 100px; */
+}
+.land_ar .steps_form_select {
+    background-position: 18px center;
+}
+.land_ar .applicant_details_heading{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+.land_ar .form-check .form-check-input {
+    margin-left: 0;
+}
+/* RTL CSS END */
+
+
+
+
+
+@media (min-width: 992px) and (max-width: 1199.99px) {
+    .uploadImgBlockPreant {
+        padding-left: 30px;
+    }
+    .drapAndDrop label {
+        width: 350px;
+    }
+
+}
+
+
+
+@media(max-width: 991.99px) {
+    .uploadImgBlockPreant {
+        padding-left: 30px;
+    }
+    .drapAndDrop label {
+        width: 350px;
+    }
+    .applicant_details_heading {
+        font-size: 20px;
+    }
+    .LeftarrowIcon svg{
+        width: 22px;
+        height: 22px;
+    }
+    .LeftarrowIcon {
+        margin-right: 15px;
+    }
+}
+
+
+@media(max-width:767.99px){
+    .drapAndDrop span {
+        font-size: 14px !important;
+    }
+    .company_profile_description {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .ImgBox {
+        width: 85px;
+        height: 104px;
+    }
+    .drapAndDrop label {
+        height: 130px;
+    }
+    .uploadImgBlockPreant {
+        padding-left: 0;
+    }
+    .company_profile_edit{
+        margin-bottom: 20px;
+    }
+    .uploadImgBlock {
+        gap: 10px 25px;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width:575.99px){
+    .applicant_details_heading {
+        font-size: 16px;
+    }
+    .LeftarrowIcon svg {
+        width: 20px;
+        height: 20px;
+    }
+    .ImgBox {
+        width: 71px;
+        height: 84px;
+    }
+    .drapAndDrop label {
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .form_label {
+        font-size: 15px;
+    }
+    .form_control {
+        padding: 8px 10px 8px 10px;
+    }
+    .Arrow {
+        background-position: 97% center;
+    }
+    .steps_form_select {
+        background-position: 97% center;
+    }
+    .EditProfileStepContent {
+        padding: 0 0px;
+    }
+}

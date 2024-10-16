@@ -1,0 +1,495 @@
+@media (min-width: 1400px) and (max-width: 1660.98px){
+    .candidates_info {
+        padding: 20px;
+        gap: 12px;
+    }
+    .review_number {
+        font-size: 26px;
+    }
+    .review_text {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+    
+    .profile_user_img img {
+        width: 100%;
+        height: 136px;
+    }
+
+    .profile_category_block {
+        margin-top: 20px;
+        margin-bottom: 33px;
+    }
+    .step_wrapper ul li a {
+        color: var(--cv-step-label);
+        font-size: 14px;
+        padding: 6px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    }
+    @media (min-width: 1200px) and (max-width: 1399.98px) {
+        .step_wrapper ul li a {       
+            font-size: 14px;
+            padding: 6px;          
+            gap: 5px;
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .step_wrapper ul {      
+            flex-wrap: nowrap;
+            overflow: auto;
+            white-space: nowrap;
+        }
+        .step_wrapper ul li {    
+            width: 100%;
+        }
+        .manage_content_box.upload_cover .avatar-upload .avatar-preview {
+            width: 100%;          
+            min-width: 100%;           
+        }
+        .profile_wrapper_block{
+                margin-top: 24px;
+            }
+            .profile_user_img {
+                max-width: 120px;
+                max-height: 120px;
+            }
+            .profile_user_img img {
+                width: 120px;
+                height: 120px;
+            }
+            .Completed-lessons-box {
+                gap: 8px;
+                padding: 14px;
+            }
+            .Completed-lessons-title {
+                font-size: 14px;
+            }
+            .Completed-lessons-text span {
+                font-size: 27px;
+            }
+        
+          }
+@media only screen and (min-width: 992px) {
+    .is-folded .side_nav {
+        width: 80px
+    }
+    .is-folded .side_nav .side_nav_inner .sideNav_menu {
+        overflow-x: hidden
+    }
+   
+    .is-folded .side_nav .dash_nav_item > a{
+        padding: 20px 25px;
+    }
+    
+    .is-folded .side_nav .side_nav_inner .sideNav_menu>li>a .title_dash_nav {
+        display: none
+    }
+    .is-folded .side_nav .side_nav_inner .sideNav_menu li .icon_holder {
+        flex:0 0 21px;
+    }
+    
+    .is-folded .side_nav .side_nav_inner .sideNav_menu li .arrowIconSubmenu {
+        opacity: 0
+    }
+    .is-folded .side_nav .side_nav_inner .sideNav_menu li .subMenuSide {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.35s ease;
+    }
+    .is-folded .side_nav:hover {
+        width: 280px
+    }
+    
+    .is-folded .side_nav:hover .side_nav_inner .sideNav_menu>li>a .title_dash_nav {
+        display: inline-block
+    }
+    .is-folded .side_nav:hover .side_nav_inner .sideNav_menu li .arrowIconSubmenu {
+        opacity: 1
+    }
+    .is-folded .side_nav:hover .side_nav_inner .sideNav_menu li .subMenuSide.show {
+        height: auto;
+        display: block;
+    }
+
+    .is-folded .side_nav:hover .side_nav_inner .sideNav_menu li .icon_holder {
+        flex:0 0 40px;
+        text-align: center;
+    }
+
+
+    .is-folded  .dash_header .dash_logo  {
+        width: 80px
+    }
+    .is-folded .dash_header .dash_logo img {
+        display: none
+    }
+    .is-folded .dash_header .dash_logo .logo_fold {
+        display: block;
+        height: 60px;
+        width: 60px;
+    }
+    .is-folded .dash_header .dash_logo .logo_fold svg{
+        width: 45px;
+    }
+
+    .is-folded .page_container {
+        padding-left: 80px
+    }
+
+  
+
+}
+
+@media only screen and (max-width: 991.98px) {
+    .land_ar .dashIconFold {
+        margin-right: 15px;
+        margin-left: 0;
+    }
+    .land_ar .page_container {
+        padding: 0;
+    }
+    .land_ar .nav_dash_wrpRight {
+        margin-left:0;
+    }
+    .land_ar .user_dropdown.company_coinbase_box .dropdown-toggle {
+        margin-left: 30px;
+    }
+
+    .profile_user_img img {
+        width: 100px;
+        height: 100px;
+    }
+    .cv_usr_name span {
+        font-size: 15px;
+    }
+    
+    .profile_user_img {
+        max-width: 100px;
+        max-height: 100px;
+        margin-top: -58px;
+    }
+   
+    .main-user-img img {
+        height: 100px;
+    }
+    
+    .profile_head_title{
+        font-size: 22px;
+        margin-top: 14px;
+    }
+   
+    .Completed-lessons-title {
+        font-size: 14px;
+    }
+     .Completed-lessons-text span {
+    font-size: 25px;
+    }
+    .profile_category_block {
+        margin-top: 16px;
+        margin-bottom: 28px;
+    }
+    .sleect_icon {
+        background-color: var(--ocean);
+        border-radius: 50%;
+        width: 63px;
+        height: 63px;
+        display: flex;
+        align-items: center;
+        padding: 13px;
+        justify-content: center;
+    }
+    .dashIconFold{
+        display: inline-block;
+    }
+    .side_nav {
+        left: -325px
+    }
+     .page_container {
+            padding-left: 0px;
+            /* overflow-y: auto  !important; */
+    }
+    
+
+    .is-folded .side_nav{
+        left:0;
+    }
+
+    .dash_header .dash_logo {
+        width: 235px;
+        background: transparent;
+        border-bottom: 1px solid rgba(190, 209, 235, .3);
+    }
+
+    .nav_dash_wrap {
+        align-items: center;
+    }
+    .dashIconFold {
+        margin-right: 0;
+        margin-left: 15px;
+    }
+    .nav_dash_wrpRight {
+        margin-left: auto;
+    }
+    .dash_userProfile{
+        display: none;
+    }
+    .is-folded .dashBoard_overLay{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .dash_page_heading {     
+        font-size: 22px;       
+    }
+
+    .step_wrapper ul {      
+        flex-wrap: nowrap;
+        overflow: auto;
+        white-space: nowrap;
+    }
+    .step_wrapper ul li {    
+        width: 100%;
+    }
+    .step_wrapper ul li a {     
+        font-size: 14px;
+        padding: 7px;    
+        gap: 5px;
+    }
+    .step_wrapper {       
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width:767.98px) {
+    .btn_hover_blue:hover{
+        background-color: var(--dark-blue) !important;
+      }
+    .text_aera{
+        height: 140px;
+    }
+    .manage_content_box .upload_img_block {
+        margin: 5px 0px 10px;
+    }
+    .dash_wrapper {     
+        padding: 15px;  
+    }
+    .radio_block {
+        gap: 15px;
+        margin: 10px 0;
+        flex-wrap: wrap;
+    }
+   
+    .user_dropdown > a {
+        margin-right: 0px;
+    }
+    .user_dropdown.company_coinbase_box .dropdown-toggle{
+        padding-right: 35px;
+        border: 0;
+    }
+    .mobile_none{
+        display: none;
+    }
+    .dash_page_heading {
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        max-width: 140px;
+    }
+    .dash_page_heading svg{
+        height: 20px;
+        width: 20px;
+    }
+    .profile_user_img img {
+        width: 80px;
+        height: 80px;
+    }
+    .Completed-lessons-text span {
+        font-size: 22px;
+    }
+    .profile_user_img {
+        max-width: 80px;
+        max-height: 80px;
+        margin-top: -52px;
+    }
+    .profile_head_title{
+        font-size: 18px;
+        margin-top: 8px;
+    }
+    .profile_category_block {
+        margin-top: 10px;
+        margin-bottom: 22px;
+    }
+    .cv_download_btn a {
+        font-size: 13px;
+        padding: 8px 24px;
+    }
+    .download-img-pdf img {
+        width: 35px;
+        height: 45px;
+    }
+    .cv_usr_name span {
+        font-size: 13px;
+    }
+    .sleect_icon {
+        width: 60px;
+        height: 60px;
+        padding: 12px;
+    }
+    .dash_header .dash_logo {
+        width: 170px;   
+    }
+    .post_btn {     
+        padding: 12px 8px;       
+    }
+    .chart_wrapper {
+        margin-top: 30px;
+    }
+    .card_selectReviBox {      
+        align-items: self-start;
+        flex-direction: column;
+    }
+    .g-4, .gy-4 {
+        --bs-gutter-y: 15px;
+    }
+    .g-4, .gx-4 {
+        --bs-gutter-x: 15px;
+    }
+    .review_number {       
+        font-size: 35px;        
+    }
+    .candidates_info {    
+        padding: 15px 15px;       
+    }
+    .dash_header{
+        height: 70px;
+    }
+    .nav_dash_wrap{
+        padding:5px 15px;
+    }
+    .dash_header .dash_logo{
+        padding-left: 15px;
+    }
+    .main_content {
+        padding: calc(70px + 15px) 15px 15px;
+    }
+    .side_nav{
+        top:70px;
+    }
+}
+
+
+@media (max-width:575.98px) {
+    .land_ar .user_dropdown.company_coinbase_box .dropdown-toggle {
+        margin-left: 0px;
+        padding-left: 0px;
+        border: 0;
+        padding-right: 0 !important;
+    }
+    .mobile_img_block{
+        flex: 0 0 100%;
+    }
+    .popup_btn_bottom .btn-primary {
+        padding: 13px 7px;
+    }
+    .result_modal .modal-body {
+        padding: 15px;
+    }
+    .profile_user_img img {
+        width: 75px;
+        height: 75px;
+    }
+    .profile_user_img {
+        max-width: 75px;
+        max-height: 75px;
+        margin-top: -45px;
+    }
+    .profile_head_title{
+        font-size: 18px;
+        margin-top: 8px;
+    }
+    .profile_category_block {
+        margin-top: 6px;
+        margin-bottom: 16px;
+    }
+    .cv_usr_name span {
+        font-size: 14px;
+    }
+    .download-img-pdf img {
+        width: 32px;
+        height: 40px;
+    }
+    .download-img-pdf {
+        gap: 15px;
+    }
+    .cv_download_btn {
+        font-size: 12px;
+        padding: 7px;
+    }
+    .sleect_icon {
+        width: 55px;
+        height: 55px;
+        padding: 10px;
+    }
+    .company_message_right {
+        max-width: 100%;
+        flex: auto;     
+      
+    }
+    .company_message {      
+        flex-direction: column;
+        gap: 15px;
+    }
+    .dash_header .dash_logo {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: auto;
+    }
+    .post_btn_text{
+        display: none;
+    }
+    .dashIconFold {        
+        margin-left: 5px;
+    }
+    .post_btn {
+        padding: 11px 5px;
+        gap: 5px;
+        width: auto;
+        font-size: 14px;
+    }
+    .company_coinbase_box .dropdown-toggle::after {     
+        height: 20px;
+        width: 20px;
+        top: 4px;      
+        right: 5px;
+    }
+    .company_text {       
+        font-size: 14px;       
+    }
+    .company_coinbase_box .dropdown-toggle {      
+        font-size: 15px;       
+    }
+    .company_info {
+        gap: 5px;
+    }
+    .dash_header .dash_logo img{
+        display: none;
+    }
+    .dash_header .dash_logo .logo_fold{
+        display: block;
+        height: auto;
+        width: auto;
+    }
+    .side_nav{
+        width:275px;
+    }
+}
