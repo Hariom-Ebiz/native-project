@@ -1,0 +1,500 @@
+.dash_pricingCardBox{
+    display: flex;
+    border-bottom: 1px solid #E5E5E5;
+    
+}
+.pricingHeading{
+    color: #2A3858;
+    font-size: 23px;
+    font-weight: 700;
+    padding-left: 20px;
+    min-height: 208px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #F1F1F1;
+    margin-bottom: 0;
+    border-bottom: 0;
+    font-family: "Montserrat";
+
+
+}
+.pricingCard{
+    /* border-right: 1px solid #F1F1F1; */
+    max-width: 380px;
+    min-width: 380px;
+    padding-top: 74px;
+    position: relative;
+}
+.plans_items{
+    display: flex;
+    gap: 8px;
+    white-space: normal;
+    font-family: Montserrat;
+    align-items: baseline;
+    padding-bottom: 18px;
+}
+
+.plans_items_track{
+    min-width: 391px;
+    max-width: 391px;
+    border-right: 1px solid #E9E9E9;
+    padding-bottom: 47px;
+}
+
+.plans_items_track:last-child{
+    border: none;
+}
+.paln_heading{
+    background-color: #2A3858;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 15px 0;
+    width: 100%;
+}
+.price_box{
+    text-align: center;
+ 
+}
+.price_title{
+    color: #2A3858;
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 5px 10px 10px 10px;
+    font-family: "Montserrat";
+}
+.price_btn{
+    border-radius: 60px;
+    border: 2px solid #2A3858;
+    color: #2A3858;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 10px 41px;
+    display: block;
+    max-width: 180px;
+    margin: auto;
+}
+
+.price_btn:hover{
+    color: #26A4FF;
+    border-color: #26A4FF;
+}
+.card_head{
+    min-height: 208px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    padding-bottom: 24px;
+}
+
+.plans_box{
+    display: flex;
+    white-space: nowrap;
+    overflow: auto;
+    margin-top: 30px;
+    border: 1px solid #E9E9E9;
+}
+
+.plans_name_box{
+    margin-bottom: 0;
+    min-height: 310px;
+}
+.pricingCard .plans_name_box{
+    border-right: 1px solid #F1F1F1;
+    border-left: 1px solid #F1F1F1;
+}
+.price_sub_title{
+    color: #25324B;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Montserrat;
+}
+.plans_items_content{
+    color: #2A3858;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Montserrat";
+}
+.plans_items svg{
+    padding-top: 5px;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+}
+.offer_label{
+    border-radius: 60px;
+    background: #E7EDFB;
+    padding: 5px 5px;
+    color: #2A3858;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    display: block;
+    max-width: 100px;
+    margin: auto;
+}
+.recommended_title{
+    color: #26A4FF;
+    font-size: 16px;
+    font-weight: 600;
+    border-top: 3px solid #26A4FF;
+    display: block;
+    text-align: center;
+    background: #F0F9FF;
+    padding: 5px 0;
+}
+.active .card_detail_box{
+    background: #F0F9FF;
+
+}
+.active .offer_label {
+    background-color: #CBE9FF;
+    color: #26A4FF;
+}
+.active .price_title{
+    color: #26A4FF;
+}
+.active .price_btn{
+    border-color: #26A4FF;
+    color: #26A4FF;
+}
+.recommended_box{
+    min-height: 37px;
+}
+.subscription_tabs{
+    position: relative;
+    border-bottom: 1px solid #C2E4EF;
+    display: flex;
+    gap: 25px;
+}
+
+.subscription_tabs_items{
+    padding: 7px 0;
+}
+.nav_link{
+    color: #7c8493;
+    font-size: 16px;
+    font-weight: 500;
+    border-color: transparent !important;
+    text-transform: capitalize;
+    font-family: "Montserrat";
+    position: relative;
+    width: max-content;
+}
+ .subscription_tabs_items.active .nav_link::before{
+    content: "";
+    background-color:#5fa9c0;
+    height: 4px;
+    position: absolute;
+    bottom: -13px;
+    width: 100%;
+} 
+.subscription_tabs_items.active .nav_link{
+    color: var(--dark-bluetext);
+}
+.card_inner_box{
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 180px);
+}
+.card_sub_title{
+    color: #2A3858;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: normal;
+    margin-bottom: 24px;
+}
+.validity_info{
+    margin-bottom: 0px;
+    color: #2A3858;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #F0F9FF;
+    border-radius: 100px;
+    padding: 7px;
+    margin-top: auto;
+}
+.sub_points_box{
+    padding-left: 25px;
+}
+.add_more{
+    color: #5FA9C0;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+}
+.add_more:hover{
+    color: #000;
+}
+.card_detail_box {
+    height: 100%;
+}
+.modal_box{
+    text-align: left !important;
+    padding: 25px 36px 36px !important;
+}
+.modal_title{
+    color:  #212121;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+.modal_header{
+    justify-content: center;
+    border-bottom: 0;
+    padding: 0;
+    padding-top: 28px;
+}
+.modal_dialog{
+    max-width: 404px;
+}
+.course_list_items{
+    margin-bottom: 20px;
+}
+.course_list_items:last-child{
+    margin-bottom: 35px;
+}
+.btn_box{
+    margin-top: 30px;
+}
+.pay_now{
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 21px;
+    font-weight: 400;
+}
+.form_check_input{
+    width: 24px;
+    height: 24px;
+}
+.form_check_label{
+    color: #2A3858;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+}
+.form_check{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.table_heading {
+    color: #25324B;
+    font-weight: 700;
+    font-size: 22px;
+    padding: 17px 24px 20px;
+    border-bottom: 1px solid #C2E4EF;
+    margin-bottom: 0;
+    font-family: "Montserrat";
+
+}
+
+.DropdownBtn{
+    background-color: transparent !important;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+}
+.data_table td{
+    border: none;
+    color: #25324B;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 24px;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.data_table th{
+    border: none;
+    padding: 20px 24px;
+    color: rgba(32, 36, 48, 0.5);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-bottom: 1px solid #C2E4EF;
+    white-space: nowrap;
+}
+.data_table tbody tr:nth-child(even) {
+    background-color: #C2E4EF;
+}
+.DropdownBtn::after{
+    display: none;
+    
+}
+.DropdownBtn{
+    outline: none !important;
+    border: none !important;
+}
+.manage_job_table_box{
+    border: 1px solid #C2E4EF;
+}
+.expansion_renewal_list .pricingCard{
+    max-width: 400px;
+    min-width: 400px;
+}
+.expansion_renewal_list .plans_items_track {
+    min-width: 320px;
+    max-width: 320px;
+}
+.offers_btn{
+    width: 100%;
+    border-radius: 14px;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 350px;
+    margin: auto;
+}
+.modal_content{
+    margin: 15px 0 40px;
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .pricingCar {
+        max-width: 340px;
+        min-width: 340px;
+    }
+    .paln_heading {
+        font-size: 18px;
+        padding: 15px 0;
+        font-weight: 600;
+    }
+    .pricingHeading {
+        font-size: 20px;
+    }
+    .price_title {
+        font-size: 22px;
+    }
+    .price_btn {
+        font-size: 13px;
+        padding: 8px 40px;
+        max-width: 160px;
+    }
+    .plans_items,.plans_items span {
+        font-size: 14px;
+    }
+}
+
+@media  (max-width: 1199.98px) {
+    .pricingCar {
+        max-width: 310px;
+        min-width: 310px;
+    }
+    .paln_heading {
+        font-size: 18px;
+        padding: 13px 0;
+        font-weight: 600;
+    }
+    .pricingHeading {
+        font-size: 20px;
+    }
+    .price_title {
+        font-size: 22px;
+    }
+    .price_btn {
+        font-size: 13px;
+        padding: 8px 40px;
+        max-width: 160px;
+    }
+    .plans_items,.plans_items span {
+        font-size: 14px;
+    }
+    .plans_items svg{
+        width: 18px;
+        height: 18px;
+    }
+    .pricingCard {
+        max-width: 330px;
+        min-width: 330px;
+    }
+}
+
+@media  (max-width: 991.98px) {
+    .pricingHeading {
+        min-height: 178px;
+    }
+    .card_head {
+        min-height: 178px;
+    }
+    .price_title {
+        font-size: 18px;
+    }
+    .price_btn{
+        font-size: 12px;
+        padding: 8px;
+        min-width: 130px;
+    }
+    .offer_label {
+        font-size: 12px;
+        max-width: 90px;
+    }
+}
+
+
+@media  (max-width: 767.98px){
+    .pricingCard {
+        max-width: 300px;
+        min-width: 300px;
+    }
+    .dash_pricingCardBox {
+        overflow-x: auto;
+    }
+    
+    .plans_items,.plans_items span {
+        font-size: 13px;
+        padding-bottom: 5px;
+    }
+    .validity_info {
+        font-size: 12px;
+    }
+
+    .modal_title {
+        font-size: 24px;
+    }
+    .modal_box {
+        padding: 20px 26px 30px !important;
+    }
+    .list_items {
+        margin-bottom: 12px;
+    }
+    .form_check_input {
+        width: 20px;
+        height: 20px;
+    }
+    .form_check_label {
+        font-size: 14px;
+    }
+    .pay_now {
+        border-radius: 8px;
+        font-size: 18px;
+    }
+    .course_list_items {
+        margin-bottom: 17px;
+    }
+}

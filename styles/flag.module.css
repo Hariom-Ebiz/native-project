@@ -1,0 +1,83 @@
+.Dropdown_box{
+    margin-right: 40px;
+}
+.DropdownBtn {
+    background-color: transparent !important;
+    padding: 0;
+    position: relative;
+    color: #404046 !important;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.DropdownBtn::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    right: -12px;
+    top: 6px;
+    transform: rotate(45deg);
+}
+.DropdownBtn::after{
+    border: none !important;
+}
+.dropdown_content{
+    background-color: #fff !important;
+    box-shadow: 0 5px 12px rgba(60, 64, 67, 0.15);
+    margin-top: 8px;
+    border: none;
+    min-width: 125px;
+    padding: 0;
+    /* border-radius: 8px; */
+    overflow: hidden;
+
+}
+.dropdown_content a:active{
+    background-color: var(--bordercolor);
+}
+.FlagLangImg{
+    margin-right: 10px;
+}
+.FlagLangImg img{
+    width: 21px;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+/* RTL CSS START */
+.FlagLangImg {
+    margin-left: 10px;
+}
+/* RTL CSS END */
+
+@media (max-width: 1199.98px){
+    .Dropdown_box {
+        margin-right: 10px;
+    }
+}
+@media (max-width: 575.98px){
+    .Dropdown_box{
+        margin-right: 20px;
+    }
+    .FlagLangImg {
+        margin-left: 0px;
+    }
+    .FlagLangImg{
+        margin-right: 4px;
+    }
+    .FlagLangImg img{
+        width: 17px;
+    }
+    .DropdownBtn {
+        font-size: 14px;
+    }
+    .DropdownBtn::before{
+        right: -14px;
+        top: 4px;
+    }
+}

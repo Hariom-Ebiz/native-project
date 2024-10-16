@@ -1,0 +1,154 @@
+.main_bg{
+    background-color: #EBEFF6;
+}
+.subscription_data_box {
+    background-color: #C2E4EF;
+    padding: 24px 66px 70px 24px;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: end;
+}
+.widthColor{
+    background-color: #fff;
+    padding: 24px 24px 43px;
+    display: block;
+}
+.sub_title {
+    color: #5FA9C0;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.btn_secondary {
+    background-color: #A8ADB7;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 20px;
+    display:block;
+    width: 224px;
+    flex:0 0 224px;
+    margin-bottom: 26px;
+    text-align: center;
+}
+.subs_data{
+    flex: auto;
+}
+
+.sub_planTitle {
+    color: #2A3858;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 26px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.sub_text {
+    color: #2A3858;
+    font-size: 14px;
+    font-weight: bold;
+}
+.sub_text span {
+    color: #5FA9C0;
+}
+
+.violet_bgColor{
+    background-color: #2A3858;
+    color: #fff;
+    margin-bottom: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 20px;
+    display:block;
+    width: 224px;
+    flex:0 0 224px;
+    text-align: center;
+}
+.violet_bgColor:hover{
+    background-color: #A8ADB7;
+    color: #fff;
+    
+}
+.btn_secondary:hover{
+    background-color: #2A3858;
+    color: #fff;
+}
+.sub_plan_details {
+    margin-bottom: 0;
+    padding-top: 6px;
+}
+.sub_plan_details li {
+    color: #212121;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+    margin-bottom: 12px;
+}
+.sub_plan_details li span {
+    font-weight: 500;
+}
+
+
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .subscription_data_box {
+        padding: 24px 30px 30px 24px;
+        margin-bottom: 35px;
+    }
+    .widthColor {
+        padding: 24px;
+    }
+    .sub_title {
+        margin-bottom: 6px;
+    }
+}
+@media (max-width: 991.98px){
+    .subscription_data_box {
+        padding: 24px 30px 30px 24px;
+        margin-bottom: 35px;
+    }
+    .widthColor {
+        padding: 24px;
+    }
+    .sub_plan_details li {
+        font-size: 18px;
+    }
+
+}
+@media (max-width: 575.98px){
+    .widthColor {
+        padding: 20px 15px;
+    }
+    .subscription_data_box {
+        padding: 20px 15px;
+        margin-bottom: 25px;
+        flex-direction: column;
+        row-gap: 12px;
+        align-items: baseline;
+    }
+    .violet_bgColor{
+        width: 100%;
+    }
+    .sub_plan_details li {
+        font-size: 16px;
+    }
+    .sub_plan_details {
+        padding-top: 0px;
+    }
+    .btn_secondary {
+        width: 100%;
+        margin-bottom: 18px;
+    }
+    .subs_dataRightBox {
+        width: 100%;
+    }
+    .sub_planTitle {
+        margin-bottom: 15px;
+    }
+}

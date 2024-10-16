@@ -1,0 +1,283 @@
+.course_wrapper {
+  margin-top: 32px;
+}
+
+.carouse-profil-heading {
+  color: #25324b;
+  font-weight: 700;
+  margin: 0;
+  font-size: 32px;
+}
+
+.component-instanca-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: #25324b;
+}
+
+.carouse_profil_block {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+}
+
+.lesson_list_block {
+  margin: 0;
+  padding-left: 0;
+}
+
+.lesson_wrapper {
+  margin-top: 23px;
+}
+
+.lesson_list_block li {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+  margin: 0;
+  padding-bottom: 22px;
+}
+
+.lesson_details {
+  display: flex;
+  gap: 33px;
+  margin: 0;
+  align-items: center;
+  background: white;
+  padding: 7px;
+  border-radius: 7px;
+  padding-right: 25px;
+  width: 100%;
+  position: relative;
+}
+.lesson_dis {
+  flex: 1;
+}
+.count_box::before {
+  position: absolute;
+  content: "";
+  top: 47px;
+  left: 23px;
+  height: 100%;
+  border: 1px dashed #5fa9c0;
+}
+
+.lesson_list_block li:last-child .count_box::before {
+  display: none;
+}
+
+.brown_box::before {
+  border-color: #872923;
+}
+
+.blue_box::before {
+  border-color: #2a3858;
+}
+
+.yellow_box::before {
+  border-color: #f3cf5b;
+}
+
+.lesson_list_block li {
+  position: relative;
+}
+
+.count_box {
+  height: 47px;
+  color: #fff;
+  font-size: 27px;
+  font-weight: 700;
+  background-color: #5fa9c0;
+  width: 47px;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.brown_box {
+  background-color: #872923;
+}
+
+.blue_box {
+  background-color: #2a3858;
+}
+
+.yellow_box {
+  background-color: #f3cf5b;
+}
+
+.lesson_img img {
+  max-width: 257px;
+  height: 187px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.lesson_tittle {
+  color: #161d46;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lesson_text {
+  color: #161d46;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 400;
+  padding-top: 9px;
+}
+.top_btn {
+  text-align: right;
+}
+.book_btn {
+  background-color: var(--dark-blue);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 10px 15px;
+  display: inline-block;
+  text-align: center;
+  min-width: 129px;
+}
+.book_btn svg {
+  margin-right: 7px;
+}
+.book_btn:hover {
+  background-color: var(--ocean);
+  color: #fff;
+}
+
+.chart_block {
+  max-width: 118px;
+  flex: 0 0 118px;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .lesson_details {
+    gap: 25px;
+  }
+  .lesson_list_block li {
+    gap: 28px;
+  }
+  .lesson_img img {
+    max-width: 197px;
+    height: 137px;
+  }
+  .lesson_details {
+    gap: 25px;
+    align-items: self-start;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .lesson_img img {
+    max-width: 197px;
+    height: 147px;
+  }
+  .lesson_list_block li {
+    gap: 20px;
+  }
+  .lesson_details {
+    gap: 20px;
+    padding-right: 20px;
+    align-items: self-start;
+  }
+}
+
+@media (max-width: 767px) {
+.chart_block{
+  max-width: 48px;
+  flex: 0 0 48px;
+  position: absolute;
+  right: 16px;
+  bottom: 10px;
+  background: white;
+  border-radius: 50%;
+}
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .top_btn {
+    text-align: left;
+}
+  .lesson_list_block li {
+    gap: 15px;
+  }
+  .lesson_details {
+    gap: 15px;
+    padding-right: 15px;
+    align-items: start;
+  }
+  .lesson_img img {
+    max-width: 177px;
+    height: 137px;
+  }
+  .lesson_tittle {
+    font-size: 16px;
+    margin: 0;
+  }
+  .book_btn {
+    margin-top: 7px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .lesson_details {
+    gap: 15px;
+    flex-direction: column;
+    padding-right: 7px;
+    align-items: self-start;
+    padding: 12px;
+  }
+  .top_btn {
+    text-align: left;
+    margin-top: 10px;
+}
+  .lesson_list_block li {
+    gap: 7px;
+  }
+  .count_box {
+    height: 35px;
+    font-size: 18px;
+    width: 35px;
+  }
+  .count_box::before {
+    top: 35px;
+    left: 17px;
+  }
+  .lesson_img {
+    width: 100%;
+  }
+  .lesson_img img {
+    max-width: 100%;
+    height: 150px;
+    width: 100%;
+  }
+  .lesson_tittle {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .book_btn {
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 8px 9px;
+    width: 85px;
+  }
+}
+
+/* front page css start */
+.section_course {
+  margin: 50px 0;
+}
+
+.sec_heading {
+  color: #252a3f;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 25px;
+}
+/* front page css end */

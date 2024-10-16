@@ -1,0 +1,315 @@
+{
+  "Job’s Roadway": "طريق الوظيفة",
+  "Career Roadway": "الطريق الوظيفي",
+  "Here is your job listings statistic report.": "إليك التقرير الإحصائي لقوائم الوظائف الخاصة بك.",
+  "Total Jobs Applied": "إجمالي الوظائف المتقدم لها",
+  "Recent Job History": "سجل الوظائف الأخيرة",
+  "Date Applied": "تاريخ التقديم",
+  "Action": "إجراء",
+  "Another action": "إجراء آخر",
+  "Something else here": "شيء آخر هنا",
+  "No Jobs Found!": "لم يتم العثور على وظائف!",
+  "Load More": "تحميل المزيد",
+  "Saved Jobs": "الوظائف المحفوظة",
+  "Here's what's happening with your career development.": "إليك ما يحدث مع تطوير مسارك الوظيفي.",
+  "Completed Courses": "الدورات المكتملة",
+  "In-Progress Courses": "الدورات الجارية",
+  "Earned Certificates & Badges": "الشهادات والشارات المكتسبة",
+  "Course's History & Status": "سجل الدورة وحالتها",
+  "Date Started": "تاريخ البدء",
+  "No Course Found!": "لم يتم العثور على دورة!",
+  "Full Time": "دوام كامل",
+  "Career Coaching": "التوجيه المهني",
+  "CV Builder": "منشئ السيرة الذاتية",
+  "sections are currently working": "الأقسام تعمل حاليًا",
+  "Hello!": "مرحبًا!",
+  "Dashboard": "لوحة التحكم",
+  "Profile": "الملف الشخصي",
+  "Jobs Gate": "بوابة الوظائف",
+  "My Applications": "طلباتي",
+  "Invitations": "الدعوات",
+  "Master Interviewing Skills": "إتقان مهارات المقابلة",
+  "Aptitude Assesments": "اختبارات الكفاءة",
+  "Career Roadway Gate": "بوابة الطريق الوظيفي",
+  "Coaching Journey": "رحلة التوجيه",
+  "Functional Mastery": "إتقان الوظائف",
+  "Standout Journey": "رحلة التميز",
+  "Community Gate": "بوابة المجتمع",
+  "Explore Our Packages": "استكشاف حزمنا",
+  "My Membership": "عضويتي",
+  "Help/FAQ": "المساعدة / الأسئلة الشائعة",
+  "Find Jobs": "البحث عن وظائف",
+  "Subscription": "الاشتراك",
+  "Notifications": "الإشعارات",
+  "View All": "عرض الكل",
+  "No Notification Found!": "لم يتم العثور على إشعارات!",
+  "Back To Journey": "العودة إلى الرحلة",
+  "Account": "الحساب",
+  "Log Out": "تسجيل الخروج",
+  "Good Morning": "صباح الخير",
+  "Good Afternoon": "مساء الخير",
+  "Good Evening": "مساء الخير",
+  "Here is what’s happening with your job search applications": "إليك ما يحدث مع طلبات البحث عن وظيفة الخاصة بك",
+  "Applications History": "سجل الطلبات",
+  "Company Name": "اسم الشركة",
+  "Role": "الدور",
+  "Application Status": "حالة الطلب",
+  "Job Status": "حالة الوظيفة",
+  "No Applied Jobs Found!": "لم يتم العثور على وظائف متقدمة!",
+  "No Saved Jobs Found!": "لم يتم العثور على وظائف محفوظة!",
+  "What's This Section About? A Quick Overview!": "ما هذه الفقرة؟ نظرة عامة سريعة!",
+  "Keep track of all job applications you've submitted or saved for later, and stay updated on their status to streamline your job search process.": "تابع جميع طلبات الوظائف التي قدمتها أو حفظتها لوقت لاحق، وابقَ على اطلاع على حالتها لتسهيل عملية البحث عن وظيفة.",
+  "Open": "مفتوح",
+  "Under Review": "قيد المراجعة",
+  "Filled": "مشغولة",
+  "Closed": "مغلقة",
+  "Unlock": "فتح",
+  "Locked": "مغلق",
+  "Shortlisted": "في القائمة المختصرة",
+  "Interviewed": "تمت مقابلته",
+  "Hired": "تم التوظيف",
+  "Declined": "مرفوض",
+  "Applied": "متقدم",
+  "Saved": "محفوظ",
+  "Aptitude Assesment": "اختبار الكفاءة",
+  "next": "التالي",
+  "submit": "تقديم",
+  "go to profile": "انتقل إلى الملف الشخصي",
+  "Question": "سؤال",
+  "of": "من",
+  "Assesment Completed": "تم إكمال الاختبار",
+  "Your test has been completed.": "تم إكمال اختبارك.",
+  "Your Score": "نتيجتك",
+  "Results are added to Profile": "تمت إضافة النتائج إلى الملف الشخصي",
+  "Last Assessment Date :": "تاريخ آخر تقييم :",
+  "Next Trial Date :": "تاريخ المحاولة التالية:",
+  "Start your test now to know your level.": "ابدأ اختبارك الآن لمعرفة مستواك.",
+  "Score": "النتيجة",
+  "Take Assessment": "خذ التقييم",
+  "Numerical": "رقمي",
+  "Logical": "منطقي",
+  "Situational": "موقفي",
+  "Verbal": "لفظي",
+  "showText1InJobList":"عرض {{1}} إلى {{2}} من {{3}} نتيجة",
+  "applyTestInJobList": "{{1}} مقدم الطلب{{3}} | {{2}} منصب شاغر{{4}}",
+  "Search": "بحث",
+  "Reset": "إعادة تعيين",
+  "Search Jobs by Job Title": "ابحث عن الوظائف حسب المسمى الوظيفي",
+  "Latest": "الأحدث",
+  "Recommended": "الموصى بها",
+  "Select Location ...": "اختر الموقع ...",
+  "Type of Employment": "نوع التوظيف",
+  "Part Time": "دوام جزئي",
+  "Internship": "تدريب",
+  "Volunteering": "تطوع",
+  "Freelance / Project": "عمل حر / مشروع",
+  "Categories": "الفئات",
+  "Project Management": "إدارة المشاريع",
+  "Supply Chain": "سلسلة التوريد",
+  "HR": "الموارد البشرية",
+  "IT": "تقنية المعلومات",
+  "Data Science": "علم البيانات",
+  "Finance": "المالية",
+  "Accounting": "المحاسبة",
+  "Marketing": "التسويق",
+  "Sales": "المبيعات",
+  "Business Development": "تطوير الأعمال",
+  "Engineering": "الهندسة",
+  "Others": "أخرى",
+  "Job Level": "المستوى الوظيفي",
+  "Student": "طالب",
+  "Entry Level": "مستوى مبتدئ",
+  "1-3 Years Experience": "خبرة من 1-3 سنوات",
+  "3-5 Years Experience": "خبرة من 3-5 سنوات",
+  "5-10 Years Experience": "خبرة من 5-10 سنوات",
+  "10+ Years Experience": "خبرة 10 سنوات أو أكثر",
+  "700 or below": "700 أو أقل",
+  "3000 or above": "3000 أو أكثر",
+  "Salary Range": "نطاق الراتب",
+  "All Jobs": "جميع الوظائف",
+  "Salary": "الراتب",
+  "Posted on": "تم النشر في",
+  "No Matching Jobs Found!": "لم يتم العثور على وظائف مطابقة!",
+  "Search through diverse opportunities from various employers and leverage our advanced filtration criteria to find and apply for the ideal match for your career aspirations.": "ابحث من خلال فرص متنوعة من مختلف أصحاب العمل واستفد من معايير التصفية المتقدمة لدينا للعثور على التطابق المثالي مع تطلعاتك المهنية والتقديم عليه.",
+  "Apply": "تقديم",
+  "Applied!": "تم التقديم!",
+  "invitationsHelloTest": "<b>مرحبًا {{1}}</b>، ألقِ نظرة سريعة على أحدث دعوات الوظائف التي تنتظرك للتقديم! 😊",
+  "Search Job Invitations by Job Title": "ابحث عن دعوات الوظائف حسب المسمى الوظيفي",
+  "Invitation Date": "تاريخ الدعوة",
+  "No matching Jobs Invitations found.": "لم يتم العثور على دعوات وظائف مطابقة.",
+  "Keep track of all job invitations you may receive from employers and apply with ease.": "تتبع جميع دعوات الوظائف التي قد تتلقاها من أصحاب العمل وتقدم بسهولة.",
+  "All Jobs Invitations": "جميع دعوات الوظائف",
+  "Sort by": "ترتيب حسب",
+  "Job Description": "وصف الوظيفة",
+  "About this role": "حول هذا الدور",
+  "Apply Before": "التقديم قبل",
+  "Job Posted On": "تم نشر الوظيفة في",
+  "Job Type": "نوع الوظيفة",
+  "Location": "الموقع",
+  "Required Skills": "المهارات المطلوبة",
+  "About Company": "عن الشركة",
+  "Something went wrong": "حدث خطأ ما",
+  "Requirements": "المتطلبات",
+  "Job Requirements": "متطلبات الوظيفة",
+  "Save and Apply Later": "احفظ وتقدم لاحقًا",
+  "Application has been submitted successfully.": "تم التقديم على الوظيفة بنجاح.",
+  "Month": "شهر",
+  "Application Form": "نموذج التقديم",
+  "Screening Questions": "أسئلة الفرز",
+  "The Hiring Team needs your input! Please answer the following questions.": "فريق التوظيف يحتاج إلى رأيك! يرجى الإجابة على الأسئلة التالية.",
+  "What are your salary expectations?": "ما هي توقعاتك للراتب؟",
+  "Are you willing to start immediately?": "هل أنت مستعد للبدء فورًا؟",
+  "How many years of experience do you have?": "كم عدد سنوات الخبرة لديك؟",
+  "What is your English Level? (C2-A2)": "ما هو مستواك في اللغة الإنجليزية؟ (C2-A2)",
+  "What makes you the ideal candidate for this position?": "ما الذي يجعلك المرشح المثالي لهذا المنصب؟",
+  "Type anything": "اكتب أي شيء",
+  "Yes": "نعم",
+  "No": "لا",
+  "Write answer here...": "اكتب الإجابة هنا...",
+  "Submit Application": "تقديم الطلب",
+  "Applied successfully.": "تم التقديم بنجاح.",
+  "Job Saved successfully.": "تم حفظ المهمة بنجاح.",
+  "Company Logo": "شعار الشركة",
+  "Save & Apply Later":"حفظ وتطبيق في وقت لاحق",
+  "All": "الجميع",
+  "My CV": "سيرتي الذاتية",
+  "Edit CV": "تعديل السيرة الذاتية",
+  "Experience": "الخبرة",
+  "Achievements": "الإنجازات",
+  "Responsibilities": "المسؤوليات",
+  "See More": "عرض المزيد",
+  "See Less": "عرض أقل",
+  "General Information": "معلومات عامة",
+  "Education": "التعليم",
+  "Career Insights": "رؤى مهنية",
+  "Skills": "المهارات",
+  "Save & Preview": "حفظ ومعاينة",
+  "Upload Photo": "تحميل الصورة",
+  "Remove Photo": "إزالة الصورة",
+  "Remove Cover": "إزالة الغلاف",
+  "Upload Cover": "تحميل الغلاف",
+  "First Name": "الاسم الأول",
+  "This field is required.": "هذا الحقل مطلوب.",
+  "Last Name": "اسم العائلة",
+  "Middle Name": "الاسم الأوسط",
+  "Invalid last name": "اسم العائلة غير صالح",
+  "Birthday": "تاريخ الميلاد",
+  "start": "البدء",
+  "Nationality": "الجنسية",
+  "Select Nationality": "اختر الجنسية",
+  "Marital Status": "الحالة الاجتماعية",
+  "Single": "أعزب",
+  "Unspecified": "غير محدد",
+  "Do You Have a Driving Lisence?": "هل لديك رخصة قيادة؟",
+  "Current Location": "الموقع الحالي",
+  "Country": "البلد",
+  "Select": "اختر",
+  "City": "المدينة",
+  "Area": "المنطقة",
+  "Select Area": "اختر المنطقة",
+  "Please Enter Area": "يرجى إدخال المنطقة",
+  "You want to relocate to another country": "هل ترغب في الانتقال إلى دولة أخرى",
+  "Contact Info": "معلومات الاتصال",
+  "Mobile Number": "رقم الجوال",
+  "Please enter a valid phone number": "يرجى إدخال رقم هاتف صالح",
+  "Mobile number and alternative number must not be the same.": "لا يجب أن يكون رقم الجوال والرقم البديل متماثلين.",
+  "Alternative Number": "رقم بديل",
+  "Email": "البريد الإلكتروني",
+  "Please provide a valid email.": "يرجى تقديم بريد إلكتروني صالح.",
+  "LinkedIn URL is required": "رابط LinkedIn مطلوب",
+  "Please enter a valid LinkedIn URL": "يرجى إدخال رابط LinkedIn صالح",
+  "About me": "معلومات عني",
+  "Write info about you": "اكتب معلومات عنك",
+  "Next Step": "الخطوة التالية",
+  "Upload Photo For CV": "تحميل الصورة للسيرة الذاتية",
+  "Personal Info": "المعلومات الشخصية",
+  "Married": "متزوج",
+  "End year cannot be less than start year.": "سنة الانتهاء لا يمكن أن تكون أقل من سنة البدء.",
+  "High School Name": "اسم المدرسة الثانوية",
+  "e.g., Modern Education School": "مثال: مدرسة التعليم الحديث",
+  "Select country": "اختر البلد",
+  "Graduation Certificate": "شهادة التخرج",
+  "German Abitur": "شهادة الأبيتور الألمانية",
+  "French BAC": "البكالوريا الفرنسية",
+  "American Diploma": "الدبلوم الأمريكي",
+  "IGCSE": "الشهادة الدولية العامة للتعليم الثانوي",
+  "International Baccalaureate": "البكالوريا الدولية",
+  "Thanaweya Amma": "الثانوية العامة",
+  "College Diploma": "دبلوم الكلية",
+  "Bachelor’s Degree": "درجة البكالوريوس",
+  "Not Specified": "غير محدد",
+  "D / Fair / 50-65%": "د / مقبول / 50-65%",
+  "C / Good / 65-75%": "ج / جيد / 65-75%",
+  "B / Very Good / 75-85%": "ب / جيد جداً / 75-85%",
+  "A / Excellent / 85%-100% ": "أ / ممتاز / 85%-100%",
+  "Technical": "تقني",
+  "Business": "الأعمال",
+  "Computer": "حاسوب",
+  "Language": "لغة",
+  "Interpersonal": "التعامل مع الآخرين",
+  "Please Specify Other": "يرجى تحديد أخرى",
+  "Graduation Year": "سنة التخرج",
+  "Grade": "التقدير",
+  "University": "الجامعة",
+  "Remove": "إزالة",
+  "Select grade": "اختر التقدير",
+  "Degree Level": "مستوى الدرجة",
+  "Field of Study": "مجال الدراسة",
+  "e.g., Business, Engineering": "مثال: الأعمال، الهندسة",
+  "Dates": "التواريخ",
+  "Start Year": "سنة البدء",
+  "Cannot be less than 1950": "لا يمكن أن يكون أقل من 1950",
+  "Cannot be more than current year.": "لا يمكن أن يكون أكثر من السنة الحالية.",
+  "End Year": "سنة الانتهاء",
+  "Add One More University": "إضافة جامعة أخرى",
+  "Post-Graduation": "ما بعد التخرج",
+  "University Name": "اسم الجامعة",
+  "Add Post-Graduation": "إضافة ما بعد التخرج",
+  "Add Certification": "إضافة شهادة",
+  "Prev": "السابق",
+  "Certification": "الشهادة",
+  "Organization/institution Name": "اسم المنظمة/المؤسسة",
+  "e.g. Ain Shams University": "مثال: جامعة عين شمس",
+  "Topic": "الموضوع",
+  "e.g., Marketing, Project Management": "مثال: التسويق، إدارة المشاريع",
+  "Certification Year": "سنة الشهادة",
+  "Other Area":"منطقة أخرى",
+  "Copyright ©2024 Native": "حقوق النشر ©2024 Native",
+  "Our Story": "قصتنا",
+  "Contact Us": "اتصل بنا",
+  "Newsletter": "النشرة الإخبارية",
+  "Send": "إرسال",
+  "Terms & Conditions": "الشروط والأحكام",
+  "Privacy & Policy": "الخصوصية والسياسة",
+  "Jobs": "وظائف",
+  "Your email here":"بريدك الإلكتروني هنا",
+  "Saved Successfully.":"تم الحفظ بنجاح.",
+  "Help Center": "مركز المساعدة",
+  "Type your question or search keyword": "اكتب سؤالك أو ابحث عن كلمة مفتاحية",
+  "Getting Started": "البدء",
+  "Was this article helpful?": "هل كانت هذه المقالة مفيدة؟",
+  "Didn't find what you were looking for?": "لم تجد ما كنت تبحث عنه؟",
+  "Contact our customer service": "اتصل بخدمة العملاء لدينا",
+  "Name": "الاسم",
+  "Please enter only letters": "يرجى إدخال أحرف فقط",
+  "Enter your email": "أدخل بريدك الإلكتروني",
+  "Please provide a valid email Id.": "يرجى تقديم عنوان بريد إلكتروني صالح.",
+  "Enter your company name": "أدخل اسم شركتك",
+  "Company Size": "حجم الشركة",
+  "Enter your company size": "أدخل حجم شركتك",
+  "Write Question": "اكتب سؤالك",
+  "I agree to Native": "أوافق على Native",
+  "Terms of Service": "شروط الخدمة",
+  "Privacy Policy": "سياسة الخصوصية",
+  "Please Accept Native Terms of Service and Privacy Policy.": "يرجى قبول شروط الخدمة وسياسة الخصوصية الخاصة بـ Native.",
+  "Close": "إغلاق",
+  "Our Purpose": "هدفنا",
+  "Creating a world where every individual embarks on their career journey with confidence and a clear sense of purpose.": "نحن نخلق عالماً يبدأ فيه كل فرد رحلته المهنية بثقة وإحساس واضح بالهدف.",
+  "How We Do It?": "كيف نقوم بذلك؟",
+  "We empower job seekers to discover their ideal career paths, develop skills, and connect with opportunities that match their strengths while providing employers an easy path to top talent and streamlined onboarding.": "نحن نمكن الباحثين عن عمل من اكتشاف مساراتهم المهنية المثالية، وتطوير مهاراتهم، والتواصل مع الفرص التي تتوافق مع نقاط قوتهم، بينما نوفر لأصحاب العمل طريقًا سهلاً إلى أفضل المواهب وعمليات توظيف ميسرة.",
+  "What We Do?": "ماذا نفعل؟",
+  "We offer a comprehensive approach including career coaching journey, insightful assessments, career development programs, vibrant community, a streamlined recruitment and onboarding processes. This holistic approach is channeled through our three primary gates: 'Career Roadway Gate,' 'Jobs' Gate,' 'Community Gate,'": "نحن نقدم نهجاً شاملاً يشمل رحلة التوجيه المهني، والتقييمات المفيدة، وبرامج تطوير المهارات المهنية، والمجتمع النشط، وعمليات التوظيف والانضمام الميسرة. يتم تنفيذ هذا النهج الشامل من خلال ثلاثة بوابات رئيسية: 'بوابة الطريق المهني'، 'بوابة الوظائف'، 'بوابة المجتمع'.",
+  "Our Gates": "بواباتنا",
+  "Testimonials": "الشهادات",
+  "My Job Applications": "طلباتي الوظيفية"
+}

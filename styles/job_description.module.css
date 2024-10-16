@@ -1,0 +1,476 @@
+.modalBox{
+    --bs-modal-width: 404px;
+    margin: auto; 
+}
+
+.unlockPopupContent{
+    padding: 90px 38px 80px 38px;
+    text-align: center;
+    border: none;
+   
+}
+
+.popupTitle{
+    color: #212121;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 19px;
+}
+
+.confirmBtn{
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background-color: #161D46;
+    color: #fff;
+    padding: 15px 30px;
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 21px;
+    font-weight: 400;
+}
+.confirmBtn:hover{
+    border: 1px solid #C5C5C5;
+    background-color:transparent; 
+    color: #25324B;
+}
+.cancelBtn{
+    border: 1px solid #C5C5C5;
+    border-radius: 14px;
+    background-color:transparent;
+    color: #25324B;
+    padding: 15px 30px;
+    display: block;
+    width: 100%;
+    font-size: 21px;
+    font-weight: 400;
+}
+.cancelBtn:hover{
+    background-color: #161D46;
+    color: #fff;
+}
+
+/* DETAILS PAGE START */
+.header_bg {
+    background-image: url(/_next/static/media/HeaderBg.3c746fff.png);
+    background-size: cover;
+    padding: 60px 40px 40px;
+    background-position: center;
+}
+
+.social_head {
+    border: 1px solid #C2E4EF;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #fff;
+}
+
+.left_box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.social_head_title {
+    color: #25324B;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 0;
+    word-break: break-word;
+    padding-right: 10px
+}
+
+.edit_job {
+    background-color: transparent;
+    border: 1px solid #5FA9C0;
+    padding: 12px 15px;
+    color: #2A3858;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.edit_job:hover {
+    background: var(--ocean);
+    color: var(--white);
+}
+
+.edit_job svg {
+    margin-right: 10px;
+}
+
+.box_title {
+    color: #25324B;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.details_page_main {
+    margin-top: 32px;
+}
+
+.requirements_list {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.requirements_list_items {
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.requirements_list_items svg {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+}
+
+.details_content_box {
+    margin-bottom: 30px;
+}
+
+.job_details_progressBar {
+    background-color: #F8F8FD;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.role_list {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.role_list_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.job_tag {
+    color: #515B6F;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.job_sub_tag {
+    color: #25324B;
+    font-size: 16px;
+    font-weight: 600;
+    width: 50%;
+    text-align: end;
+}
+
+.job_about_box:not(:last-child) {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #C2E4EF;
+    margin-bottom: 40px;
+}
+
+.statusBox {
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 24px;
+}
+
+.statusItems {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 80px;
+    border: 1px solid;
+
+}
+
+.greenBtn {
+    background-color: rgba(86, 205, 173, .1);
+    color: #56CDAD;
+    border: none;
+    position: relative;
+
+}
+
+.greenBtn::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #C2E4EF;
+    right: -8px;
+    top: 0;
+}
+
+.yellowBtn {
+    color: #F3CF5B;
+    background-color: rgb(235 133 51 / 10%);
+}
+
+.blueBtn {
+    color: #2A3858;
+}
+
+.skills_tags_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-top: 24px;
+}
+
+.skills_tags {
+    color: #2A3858;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 5px 15px;
+    background-color: #F8F8FD;
+}
+
+.left_box img {
+    min-width:81px;
+    max-width: 81px;
+    min-height: 91px;
+    max-height: 91px;
+
+
+
+}
+
+.land_ar .edit_job svg {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.land_ar .greenBtn::after {
+    right: unset;
+    left: -8px;
+}
+
+.icon_wrapper {
+    position: relative;
+}
+
+.user_name_later {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 86px;
+    font-weight: 700;
+    display: flex;
+    margin-bottom: 0;
+    height: 100%;
+    line-height: normal;
+    text-transform: capitalize;
+    align-items: center;
+    justify-content: center;
+}
+
+.apply_btn {
+    background-color: #2A3858 !important;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 7px 10px;
+    white-space: nowrap;
+    border: 1px solid;
+    position: relative;
+}
+.apply_btn:hover{
+    background-color: var(--ocean) !important;
+    color: var(--white);
+}
+/* .apply_btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    height: 100%;
+    width: 1px;
+    background-color: #C2E4EF;
+} */
+
+/* .apply_btn:hover {
+    background-color: transparent;
+    border: 1px solid;
+    color: #2A3858;
+} */
+ .save_apply_btn{
+    border: 1px solid #ccccf5;
+    background-color: transparent;
+    font-size:15px;
+    padding: 7px 10px; 
+    font-weight:700; 
+    color: #2A3858;
+    cursor: pointer;
+ }
+ .save_apply_btn:hover{
+    background-color: #2A3858 !important;
+    color: #fff;
+    border-color: #2A3858;
+ }
+ .job_save_bnt_track{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+ }
+ .job_save_bnt_track button{
+    flex-grow: 1;
+    min-width: 170px;
+ }
+ .job_apply_btn_bx button{
+    width: 100%;
+
+ }
+.job_apply_btn_bx .apply_btn{
+    padding: 5px 34px;
+    font-size: 16px;
+}
+.job_apply_btn_bx .save_apply_btn{
+    padding: 5px 12px;
+    font-size: 16px;
+}
+
+
+/* DETAILS PAGE END */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .header_bg {
+        padding: 30px 20px 30px;
+    }
+
+    .left_box img {
+        width: 78px;
+        height: 81px;
+    }
+
+    .user_name_later {
+        font-size: 66px;
+    }
+    .left_box {
+        width: 70%;
+    }
+    .social_head_title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width:1199.98px) {
+    .left_box {
+        width: 70%;
+    }
+    .social_head_title {
+        font-size: 22px;
+    }
+    
+    .save_apply_btn{
+        padding: 10px 20px;
+     }
+    
+    .apply_btn {
+        padding: 10px 50px;
+    }
+
+    .header_bg {
+        padding: 30px 20px 30px;
+    }
+
+    .left_box img {
+        width: 58px;
+        height: 60px;
+    }
+
+    .user_name_later {
+        font-size: 50px;
+    }
+
+    .left_box {
+        gap: 15px;
+    }
+
+    .social_head_title {
+        font-size: 20px;
+    }
+    /* .social_head{
+        flex-wrap: wrap;
+    } */
+    .apply_btn::before {
+        left: -15px;
+    }
+}
+
+
+@media (max-width:991.98px) {
+    .left_box {
+        gap: 15px;
+    }
+
+    .social_head_title {
+        font-size: 22px;
+    }
+
+    .box_title {
+        font-size: 22px;
+    }
+
+    .social_head {
+        padding: 12px;
+    }
+}
+
+@media (max-width:767.98px) {
+    .apply_btn {
+        padding: 8px 35px;
+    }
+    .save_apply_btn{
+        padding: 8px 20px;
+     }
+    
+    .left_box img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .user_name_later {
+        font-size: 30px;
+    }
+    .apply_btn::before{
+        display: none;
+    }
+ 
+}
+
+@media (max-width:575.98px) {
+    .social_head_title {
+        font-size: 20px;
+    }
+
+    .box_title {
+        font-size: 18px;
+    }
+    .left_box {
+        width: 100%;
+    }
+    .social_head {
+        flex-wrap: wrap;
+    }
+}

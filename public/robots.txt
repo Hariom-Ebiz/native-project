@@ -1,0 +1,5 @@
+
+User-agent: *
+Disallow:
+
+Sitemap: https://nativessr.stage04.obdemo.com/sitemap.xml
