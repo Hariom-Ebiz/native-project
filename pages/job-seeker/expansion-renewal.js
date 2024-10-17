@@ -99,7 +99,7 @@ const ExploreOurPackages = ({ subscriptionList, packagesList }) => {
                 <Link href="/job-seeker/explore-our-packages" className={styles.nav_link}>New</Link>
               </li>
               <li className={`${styles.subscription_tabs_items} ${styles.active}`}>
-                <Link href="#" className={styles.nav_link}>Expansion/Renewal – Save 10%</Link>
+                <Link href="#" className={styles.nav_link}>Expansion/Renewal – Save 30%</Link>
               </li>
             </ul>
           </div>
@@ -211,7 +211,7 @@ const ExploreOurPackages = ({ subscriptionList, packagesList }) => {
         </Modal.Header>
         <Modal.Body>
           {console.log("modalContent",modalContent)}
-          <div className="modal_inner">
+          <div className="modal_inner"> 
             <h2>🎉 Welcome Aboard! 🎉</h2>
             <br />
             <h6>Welcome to our exclusive community! A confirmation email is on its way.</h6>

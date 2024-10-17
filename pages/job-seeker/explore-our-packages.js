@@ -187,42 +187,47 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
       >
         {console.log("err", errors)}
         <Modal.Header className={`modal-header ${styles.modal_header}`}>
-          <h1 className={`modal-title ${styles.modal_title}`} id="exampleModalLabel">Choose Courses</h1>
+          <h1 className={`modal-title ${styles.modal_title}`} id="exampleModalLabel">Let’s Level Up! 🚀
+          </h1>
         </Modal.Header>
-        {errors?.["functional_mastery_courses"] && (
-          <div className="invalid-feedback d-block text-center">
-            {errors?.["functional_mastery_courses"].message}
+        
+          <Modal.Body>
+          <div className={styles.modal_content} style={{ textAlign: "left" }}>
+            <h5>Pick one of the Functional Mastery Journeys below to boost your skills and advance your career
+            </h5> 
+            {/* "{modalContent.title} ({modalContent.price?.toLocaleString()} EGP)" ?*/}
           </div>
-        )}
+        </Modal.Body>
+
         <Modal.Body className={`modal-body ${styles.modal_box}`}>
           {console.log(packagesList)}
           {Array.isArray(subscription['functional_mastery']) && packagesList.every(r => subscription['functional_mastery'].includes(String(r.id))) ? <p>You have already purchased all Courses.</p> : <div>
             <ul className={styles.course_list_block}>
               {console.log("subscription['functional_mastery']", subscription['functional_mastery'])}
-              {Array.isArray(packagesList) && packagesList.slice(0, isShowAllPackages ? packagesList.length : 3).map(p => {
-                return !subscription['functional_mastery'].includes(String(p.id)) && <li className={styles.course_list_items}>
-                  <div className={`form-check ${styles.form_check}`}>
-                    <input className={`form-check-input ${styles.form_check_input}`} name="functional_mastery_courses" type="checkbox" value={p.id} id={p.id} {...register("functional_mastery_courses", {
-                      required: {
-                        value: true,
-                        message: "Please Select at least one course.",
-                      }
-                    })} />
-                    <label className={`form-check-label ${styles.form_check_label}`} for={p.id}>
-                      {p.title}
-                    </label>
-                  </div>
-                </li>
-              })}
-              {Array.isArray(packagesList) && packagesList.length > 3 && <li className={styles.course_list_items}>
+              {Array.isArray(packagesList) && packagesList.length > 0 && 
+              <select {...register("functional_mastery_courses", { required: "Please select atleast one course" })}>
+                <option disabled value={""} selected>Select a Course</option>
+
+                {Array.isArray(packagesList) && packagesList.map(p => {
+                return !subscription['functional_mastery'].includes(String(p.id)) && 
+                    <option value={p.id}>{p.title}</option>
+                })}
+                </select>}
+                {errors?.["functional_mastery_courses"] && (
+          <div className="invalid-feedback d-block">
+            {errors?.["functional_mastery_courses"].message}
+          </div>
+        )}
+              
+              {/* {Array.isArray(packagesList) && packagesList.length > 3 && <li className={styles.course_list_items}>
                 <button className={styles.add_more} onClick={() => setIsShowAllPackages(!isShowAllPackages)}>
                   {isShowAllPackages ? "Show less !" : "And more!"}
                 </button>
-              </li>}
+              </li>} */}
 
             </ul>
             <div className={styles.btn_box}>
-              <button className={`post_btn ${styles.pay_now}`} onClick={handleSubmit(getFunctionMasterySubscription)}>Pay Now</button>
+              <button className={`post_btn ${styles.pay_now}`} onClick={handleSubmit(getFunctionMasterySubscription)}>Continue to Payment</button>
             </div>
           </div>}
         </Modal.Body>
@@ -237,17 +242,21 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
       >
         <Modal.Header closeButton>
           <h3>
-            Are You Sure ?
+          Let’s Level Up! 🚀
             {/* {modalContent.title} Subscription ({modalContent.price?.toLocaleString()} EGP) */}
           </h3>
         </Modal.Header>
+
+
+
         <Modal.Body>
           <div className={styles.modal_content} style={{ textAlign: "left" }}>
-            <h5>You want to subscribe "{modalContent.title} ({modalContent.price?.toLocaleString()} EGP)" ?</h5>
+            <h5>You’re about to unlock {modalContent.title} , your gateway to mastering new skills and advancing your career!</h5> 
+            {/* "{modalContent.title} ({modalContent.price?.toLocaleString()} EGP)" ?*/}
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <button className="btn btn-primary" onClick={() => getSubscription()} >Subscribe</button>
+          <button className="btn btn-primary" onClick={() => getSubscription()} >Continue to Payment</button>
         </Modal.Footer>
       </Modal>
 
