@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { createAxiosCookies } from "@/fn";
 import FlagLang from "@/components/FlagLang";
@@ -57,11 +57,11 @@ const ExploreOurPackages = ({ subscriptionList, packagesList }) => {
   }
 
   const getFunctionMasterySubscription = (data) => {
-    console.log("data : ",data);
-    
+    console.log("data : ", data);
+
     if (Array.isArray(data.functional_mastery_courses)) {
       request("POST", "subscribe/candidate/", { subscription_id: modalContent.id, course_type: modalContent.course_type, sub_course_type: data.functional_mastery_courses })
-    } else if(typeof data.functional_mastery_courses == "string"){
+    } else if (typeof data.functional_mastery_courses == "string") {
       request("POST", "subscribe/candidate/", { subscription_id: modalContent.id, course_type: modalContent.course_type, sub_course_type: [data.functional_mastery_courses] })
     }
   }
@@ -106,7 +106,7 @@ const ExploreOurPackages = ({ subscriptionList, packagesList }) => {
 
 
 
-          <div className={`${styles.plans_box}`} ref={sliderRef} tabIndex={0} style={{outline: "0"}}>
+          <div className={`${styles.plans_box}`} ref={sliderRef} tabIndex={0} style={{ outline: "0" }}>
 
             {
               subscriptionList.filter(f => f.is_free != "1").map(d => {
@@ -127,7 +127,7 @@ const ExploreOurPackages = ({ subscriptionList, packagesList }) => {
                             )
                           }
 
-                          {
+                          {/* {
                             was_subscriber ?
                               d.is_free ? (<button className={styles.price_btn} >Selected</button>) :
 
@@ -139,7 +139,21 @@ const ExploreOurPackages = ({ subscriptionList, packagesList }) => {
                                     <button className={styles.price_btn} onClick={() => { setModalContent(d); handleShowCourseType(); }} >Get started</button>
                                     : (<></>)
                               : (<></>)
-                          }
+                           } */}
+                           {
+                            was_subscriber ?
+                              d.is_free ? (
+                                <button className={styles.price_btn}>Selected</button>
+                              ) : (d.course_type == "functional_mastery") ? (
+                                <button className={styles.price_btn} onClick={() => { setModalContent(d); handleShowCourseType(); }}>Get started</button>
+                              ) : (
+                                <></>
+                              )
+                              : (
+                                <></>
+                              )
+                          } 
+
                         </div>
                       </div>
                       <div className={styles.card_inner_box}>
@@ -210,8 +224,8 @@ const ExploreOurPackages = ({ subscriptionList, packagesList }) => {
         <Modal.Header closeButton style={{ borderBottom: "none" }}>
         </Modal.Header>
         <Modal.Body>
-          {console.log("modalContent",modalContent)}
-          <div className="modal_inner"> 
+          {console.log("modalContent", modalContent)}
+          <div className="modal_inner">
             <h2>🎉 Welcome Aboard! 🎉</h2>
             <br />
             <h6>Welcome to our exclusive community! A confirmation email is on its way.</h6>

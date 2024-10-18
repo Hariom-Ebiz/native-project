@@ -50,6 +50,23 @@ const Invitations = ({ Jobs, jobTypeList, jobCategory, careerLevels, salaryRange
     }
   }
 
+  useEffect(() => {
+    if (applyRes) {
+      if (!applyRes.status) {
+        toast.error("Something went wrong!");
+        return;
+      }
+
+
+      toast.success("Applied successfully.")
+      // route.push("/job-seeker/job-list")
+      setJobList(prevJobs => {
+        return prevJobs.filter(j => j.id != applyRes.jobId)
+      })
+      route.replace(route.asPath);
+    }
+  }, [applyRes])
+
 
   const [welcomPopup, setWelcomePopup] = useState(true);
   const handleWelcomeClose = () => setWelcomePopup(false);
@@ -610,7 +627,6 @@ const Invitations = ({ Jobs, jobTypeList, jobCategory, careerLevels, salaryRange
                         </div>
                       </div>
                     )
-
                   })
                 }
 
