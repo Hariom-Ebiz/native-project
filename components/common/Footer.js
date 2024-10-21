@@ -15,8 +15,8 @@ const Footer = () => {
 
   const dispatch = useDispatch();
   const router = useRouter();
-  const { cvStep  } = useSelector((store) => store.auth);
-  const { setting  } = useSelector((store) => store.site);
+  const { cvStep } = useSelector((store) => store.auth);
+  const { setting } = useSelector((store) => store.site);
   const [footerData, setFooterData] = useState();
   const [emailForNewsletter, setEmailForNewsletter] = useState("");
   const [nlEmailError, setNlEmailError] = useState(null);
@@ -43,8 +43,13 @@ const Footer = () => {
   }, [newsLetterSubmitRes]);
 
   const handleSubmitNewsletterEmail = () => {
+
     setNlEmailError(null);
-    if (!emailForNewsletter || !emailForNewsletter.match(emailPattern)) {
+    if (!emailForNewsletter) {
+      setNlEmailError("email address is required!");
+      return;
+    }
+    if (!emailForNewsletter.match(emailPattern)) {
       setNlEmailError("Please provide a valid email address!");
       return;
     }
@@ -75,10 +80,10 @@ const Footer = () => {
                 href="#!"
                 onClick={() => {
                   cvStep === 5
-                   ? router.replace("/job-seeker/view-cv") : cvStep == null ? router.replace("/login")
-                   : router.replace("/job-seeker/create-cv/step1");
-                 dispatch(unsetModal());
-               }}
+                    ? router.replace("/job-seeker/view-cv") : cvStep == null ? router.replace("/login")
+                      : router.replace("/job-seeker/create-cv/step1");
+                  dispatch(unsetModal());
+                }}
               >
                 {" "}
                 CV Builder
@@ -102,9 +107,9 @@ const Footer = () => {
                 // className="link_btn"
                 className="btn-primary w-100 "
                 onClick={() => {
-                   cvStep === 5
+                  cvStep === 5
                     ? router.replace("/job-seeker/view-cv") : cvStep == null ? router.replace("/login")
-                    : router.replace("/job-seeker/create-cv/step1");
+                      : router.replace("/job-seeker/create-cv/step1");
                   dispatch(unsetModal());
                 }}
               >
@@ -129,12 +134,12 @@ const Footer = () => {
               }}
             /> */}
             <div
-             className="col-md-6 col-lg-4"
+              className="col-md-6 col-lg-4"
             >
-                        <Link  href="/">
-                
+              <Link href="/">
+
                 <img className="logo_footer" src="/img/logo-footer.svg" />
-                </Link>
+              </Link>
             </div>
 
             {/* <div className="footer-block">

@@ -108,8 +108,8 @@ const JobDescription = ({ jobId, description }) => {
                   {/* <span className={styles.user_name_later}>s</span> */}
                 </div>
 
-                <div className={` ${styles.job_save_bnt_track} ${styles.job_apply_btn_bx}`}  style={{position: "relative"}}>
-                  <div style={{width: "1px", background: "#C2E4EF", height: "100%", maxHeight: "100%", position: "absolute",left: "-10px"}}></div>
+                <div className={` ${styles.job_save_bnt_track} ${styles.job_apply_btn_bx}`} style={{ position: "relative" }}>
+                  <div style={{ width: "1px", background: "#C2E4EF", height: "100%", maxHeight: "100%", position: "absolute", left: "-10px" }}></div>
 
                   {
                     <h4 className={styles.social_head_title}>
@@ -128,8 +128,8 @@ const JobDescription = ({ jobId, description }) => {
                       <button id="applyBtn" className={`${styles.apply_btn}`} disabled={description.isApplied == "1"} onClick={() => applyJob(jobId, 0)} style={{ backgroundColor: description.isApplied == "1" ? "grey" : "#2A3858" }}>{description.isApplied == "1" ? t("Applied!") : t("Apply")}</button>
 
 
-                      {description.isApplied != "1" && <button id="applyBtn" className={ `${!description.isSaved  ? `${styles.save_apply_btn}`:""}`}  disabled={description.isSaved} onClick={() => applyJob(jobId, 1)} 
-                          style={{ backgroundColor: description.isSaved == "1" ? "#c7c3c3" : "#2A3858" , color: description.isSaved == "1" ? "#2A3858" : "#fff" }}>
+                      {description.isApplied != "1" && <button id="applyBtn" className={`${!description.isSaved ? `${styles.save_apply_btn}` : ""}`} disabled={description.isSaved} onClick={() => applyJob(jobId, 1)}
+                        style={{ backgroundColor: description.isSaved == "1" ? "#c7c3c3" : "#2A3858", color: description.isSaved == "1" ? "#2A3858" : "#fff" }}>
                         {description.isApplied == "1" ? "Applied!" : (description.isSaved == "1") ? t("Saved") : t("Save and Apply Later")}</button>}
                     </>
                   )
@@ -249,7 +249,7 @@ const JobDescription = ({ jobId, description }) => {
                               </div>
                               <div className="apply_count">
                                 <h5>
-                                  {t("applyTestInJobList", { 1: description.totalApplied, 2: description.vacancies,3: description.totalApplied > 1 ? "s" : "", 4: description.vacancies > 1 ? "s" : "" })}
+                                  {t("applyTestInJobList", { 1: description.totalApplied, 2: description.vacancies, 3: description.totalApplied > 1 ? "s" : "", 4: description.vacancies > 1 ? "s" : "" })}
                                 </h5>
                               </div>
                             </div>
@@ -352,7 +352,7 @@ const JobDescription = ({ jobId, description }) => {
                 <img src="/img/icon.png" alt="" />
               </div>
               <h3>
-                {t(`Application has been submitted successfully.`)}
+                {t(`Application has been Saved successfully.`)}
               </h3>
             </div>
           </Modal.Body>
@@ -373,29 +373,29 @@ const JobDescription = ({ jobId, description }) => {
         </Modal>
 
         <Modal
-        className={styles.modalBox}
-        show={cvBuilderPopup}
-        onHide={handleCvBuilderPopupClose}
-        // size="lg"
-        centered
-      >
-        <Modal.Body className="p-0 border-0">
-          <div className="icon_block" style={{ marginTop: "30px" }}>
-            <img src="/img/error.png" alt="" />
-          </div>
-          <div className={styles.unlockPopupContent} style={{paddingTop: "20px", paddingBottom: "20px"}}>
-            <h2 className={styles.popupTitle}>
-              {t("Please Complete Your CV.")}
-            </h2>
-            <p className={styles.subText}>
-              Ready to apply? Complete your CV <b>(just once)</b> in the <b>(CV Builder)</b>, and you're set for all future jobs. Get started now
-            </p>
-            <button className={styles.confirmBtn} onClick={() => route.push("/job-seeker/create-cv/step1")}>
-              {t("Go to CV Builder")}
-            </button>
-          </div>
-        </Modal.Body>
-      </Modal>
+          className={styles.modalBox}
+          show={cvBuilderPopup}
+          onHide={handleCvBuilderPopupClose}
+          // size="lg"
+          centered
+        >
+          <Modal.Body className="p-0 border-0">
+            <div className="icon_block" style={{ marginTop: "30px" }}>
+              <img src="/img/error.png" alt="" />
+            </div>
+            <div className={styles.unlockPopupContent} style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+              <h2 className={styles.popupTitle}>
+                {t("Please Complete Your CV.")}
+              </h2>
+              <p className={styles.subText}>
+                Ready to apply? Complete your CV <b>(just once)</b> in the <b>(CV Builder)</b>, and you're set for all future jobs. Get started now
+              </p>
+              <button className={styles.confirmBtn} onClick={() => route.push("/job-seeker/create-cv/step1")}>
+                {t("Go to CV Builder")}
+              </button>
+            </div>
+          </Modal.Body>
+        </Modal>
       </div>
     </JobSeekerAuth>
   );

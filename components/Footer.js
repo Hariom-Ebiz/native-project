@@ -23,8 +23,16 @@ const Footer = () => {
   }, [footerRes]);
 
   const handleSubmitNewsletterEmail = () => {
+
+    console.log(">>> 1")
     setNlEmailError(null);
-    if (!emailForNewsletter || !emailForNewsletter.match(emailPattern)) {
+    if (!emailForNewsletter) {
+      console.log(">>> 2")
+      setNlEmailError("email address is required!");
+      return;
+    }
+    if (!emailForNewsletter.match(emailPattern)) {
+      console.log(">>> 3")
       setNlEmailError("Please provide a valid email address!");
       return;
     }

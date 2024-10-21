@@ -35,4 +35,4 @@ export const EMPLOYER_URL = "http://localhost:4075/employer";
 
 export const API = BASEURL;
 
-export const axiosInstance = axios.create({ baseURL: `${BASEURL}/` });
+export const axiosInstance = axios.create({ baseURL: `${API}/` });

@@ -24,7 +24,7 @@ const ChangePassword = () => {
   const onSubmit = (data) => {
     const { newPassword, confirmPassword } = data;
 
-if (newPassword !== confirmPassword) {
+    if (newPassword !== confirmPassword) {
       setError("confirmPassword", {
         type: "manual",
         message: "Confirm password do not match with New Password",
@@ -47,6 +47,8 @@ if (newPassword !== confirmPassword) {
     resetField("newPassword");
     resetField("confirmPassword");
   };
+
+  console.log(">>>>>>>>", isNewPasswordVisible);
 
   return (
     <div className={`${styles.dash_wrapper} ${styles.top_space_block}`}>

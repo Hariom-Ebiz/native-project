@@ -32,7 +32,7 @@ const ResetPaswword = ({ token }) => {
     if (newPassword !== newConfirmPassword) {
       setError("newConfirmPassword", {
         type: "manual",
-        message: "Confirm password do not match.",
+        message: "Confirm password doesn't match with New Password .",
       });
       return;
     }
@@ -49,7 +49,7 @@ const ResetPaswword = ({ token }) => {
       if (response.status) {
         toast.success(response.message);
         if (bool) {
-          
+
           router.push("/employer/login");
         } else {
           router.push("/login");
@@ -190,9 +190,7 @@ const ResetPaswword = ({ token }) => {
 };
 
 export async function getServerSideProps(context) {
-  const {
-    query: { token },
-  } = context;
+  const {query: { token }} = context;
 
   return {
     props: {

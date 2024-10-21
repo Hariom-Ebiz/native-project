@@ -40,8 +40,8 @@ const CvStep1 = ({
   setValue
 }) => {
 
-  console.log("errors : ",errors);
-  
+  console.log("errors : ", errors);
+
   const { t } = useTranslation('common');
 
   const removePhotoHandler = () => {
@@ -58,43 +58,43 @@ const CvStep1 = ({
 
   const validatePhoneNumber = (phoneNumber) => {
     const parsedNumber = parsePhoneNumberFromString(phoneNumber);
-    if (parsedNumber && parsedNumber.countryCallingCode == "20"){
+    if (parsedNumber && parsedNumber.countryCallingCode == "20") {
       if ((phoneNumber.length - 3) > 10) {
         return false
       } else {
         return true
       }
-    } else  {
+    } else {
       return parsedNumber && isValidPhoneNumber(phoneNumber);
     }
   };
 
-    // Watch the values of both inputs
-    const mobileNumber = watch('contact_mobile');
-    const altMobileNumber = watch('contact_alt_mobile');
+  // Watch the values of both inputs
+  const mobileNumber = watch('contact_mobile');
+  const altMobileNumber = watch('contact_alt_mobile');
 
-    const mobileNumberRef = useRef(null);
-    const altMobileNumberRef = useRef(null);
+  const mobileNumberRef = useRef(null);
+  const altMobileNumberRef = useRef(null);
 
-    const myhandleSubmit  = () => {
-      
-  
-      if(errors["contact_mobile"]){
-        if (mobileNumberRef.current) {
-          mobileNumberRef.current.scrollIntoView({behavior: "smooth", block: "center"});
-        }
-        return false
+  const myhandleSubmit = () => {
+
+
+    if (errors["contact_mobile"]) {
+      if (mobileNumberRef.current) {
+        mobileNumberRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
       }
-
-      if(errors["contact_alt_mobile"]){
-        if (altMobileNumberRef.current) {
-          altMobileNumberRef.current.scrollIntoView({behavior: "smooth", block: "center"});
-        }
-        return false
-      }
-
-      handleSubmit(onSubmit)();
+      return false
     }
+
+    if (errors["contact_alt_mobile"]) {
+      if (altMobileNumberRef.current) {
+        altMobileNumberRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      return false
+    }
+
+    handleSubmit(onSubmit)();
+  }
 
   return (
     <div className={` ${styles.land_ar} ${styles.dash_wrapper}`}>
@@ -127,11 +127,10 @@ const CvStep1 = ({
                         <div
                           id="imagePreview"
                           style={{
-                            backgroundImage: `url('${
-                              profilePicUrl
-                                ? profilePicUrl
-                                : "/img/user-icon2.jpg"
-                            }')`,
+                            backgroundImage: `url('${profilePicUrl
+                              ? profilePicUrl
+                              : "/img/user-icon2.jpg"
+                              }')`,
                           }}
                         ></div>
                       </div>
@@ -177,9 +176,8 @@ const CvStep1 = ({
                       <div
                         id="imagePreview2"
                         style={{
-                          backgroundImage: `url('${
-                            coverPicUrl ? coverPicUrl : "/img/cover-pic2.png"
-                          }')`,
+                          backgroundImage: `url('${coverPicUrl ? coverPicUrl : "/img/cover-pic2.png"
+                            }')`,
                         }}
                       ></div>
                     </div>
@@ -470,9 +468,9 @@ const CvStep1 = ({
                 </>
               }
               onChangeFunc={(e) => countrySelectedHandler(e.target.value)}
-              // otherFields={{
-              //   onChange: (e) => countrySelectedHandler(e.target.value),
-              // }}
+            // otherFields={{
+            //   onChange: (e) => countrySelectedHandler(e.target.value),
+            // }}
             />
 
             <SelectInput
@@ -498,7 +496,7 @@ const CvStep1 = ({
                   })}
                 </>
               }
-              onChangeFunc={(e)=>{
+              onChangeFunc={(e) => {
                 areaSelecetHandler(e.target.value)
                 setValue("current_area", "")
               }}
@@ -516,7 +514,7 @@ const CvStep1 = ({
                   message: t("This field is required."),
                 },
               }}
-              onChangeFunc={(e)=> {
+              onChangeFunc={(e) => {
                 setValue("current_area", e.target.value)
               }}
               options={
@@ -529,27 +527,27 @@ const CvStep1 = ({
                     ))
                   }
                   <option value="other">{t("Others")}</option>
-                  
+
                 </>
               }
             />
-            
+
             {
               watch("current_area") == "other" && (
 
-                  <TextInput
-                    label={t("Other Area")}
-                    name="current_other_area"
-                    placeholder={t("Please Enter Area")}
-                    register={register}
-                    errors={errors}
-                    registerFields={{
-                      required: {
-                        value: true,
-                        message: t("This field is required."),
-                      },
-                    }}
-                  />
+                <TextInput
+                  label={t("Other Area")}
+                  name="current_other_area"
+                  placeholder={t("Please Enter Area")}
+                  register={register}
+                  errors={errors}
+                  registerFields={{
+                    required: {
+                      value: true,
+                      message: t("This field is required."),
+                    },
+                  }}
+                />
               )
             }
 
@@ -615,15 +613,15 @@ const CvStep1 = ({
                 <h4>{t("Contact Info")}</h4>
               </div>
             </div>
-            
+
             <div ref={mobileNumberRef}>
               <label htmlFor="contact_mobile" className={styles.form_label}>{t("Mobile Number")}</label>
               <PhoneInput
                 // inputClass={`${styles.form_control} form-control`}
                 value={mobileNumber}
                 countryCodeEditable={true}
-                inputStyle={{width: "100%"}}
-                containerStyle={{width: "100%"}}
+                inputStyle={{ width: "100%" }}
+                containerStyle={{ width: "100%" }}
                 country={"eg"}
                 enableSearch={true}
                 inputProps={{
@@ -640,7 +638,7 @@ const CvStep1 = ({
                   validate: {
                     notSameAsAlt: value => value !== altMobileNumber || t("Mobile number and alternative number must not be the same."),
                     isValidPhone: value => {
-                      if(value && !validatePhoneNumber(`+${value}`)){
+                      if (value && !validatePhoneNumber(`+${value}`)) {
                         return t("Please enter a valid phone number")
                       }
                     },
@@ -673,7 +671,7 @@ const CvStep1 = ({
             /> */}
 
 
-            <div ref={altMobileNumberRef}>
+            {/* <div ref={altMobileNumberRef}>
               <label htmlFor="contact_alt_mobile" className={styles.form_label}>{t("Alternative Number")}</label>
               <PhoneInput
                 // inputClass={`${styles.form_control} form-control`}
@@ -706,7 +704,43 @@ const CvStep1 = ({
                 onChange={(value) => setValue('contact_alt_mobile', value, { shouldValidate: true })}
               />
               {errors.contact_alt_mobile && <p className="text-danger">{errors.contact_alt_mobile.message}</p>}
+            </div> */}
+
+            <div ref={altMobileNumberRef}>
+              <label htmlFor="contact_alt_mobile" className={styles.form_label}>{t("Alternative Number")}</label>
+              <PhoneInput
+                // inputClass={`${styles.form_control} form-control`}
+                value={altMobileNumber}
+                countryCodeEditable={true}
+                inputStyle={{ width: "100%" }}
+                containerStyle={{ width: "100%" }}
+                country={"eg"}
+                enableSearch={true}
+                inputProps={{
+                  name: 'contact_alt_mobile',
+                  required: false,
+                  autoFocus: false
+                }}
+
+                {...register("contact_alt_mobile", {
+                  required: {
+                    value: false,
+                    message: t("This field is required."),
+                  },
+                  validate: {
+                    notSameAsAlt: value => value !== mobileNumber || t("Mobile number and alternative number must not be the same."),
+                    isValidPhone: value => {
+                      if (value && !validatePhoneNumber(`+${value}`)) {
+                        return t("Please enter a valid phone number")
+                      }
+                    },
+                  }
+                })}
+                onChange={(value) => setValue('contact_alt_mobile', value, { shouldValidate: true })}
+              />
+              {errors.contact_alt_mobile && <p className="text-danger">{errors.contact_alt_mobile.message}</p>}
             </div>
+
 
             {/* <NumberInput
               label="Alternative Number"
@@ -753,7 +787,7 @@ const CvStep1 = ({
               name="linked_in"
               register={register}
               registerFields={{
-                required: {value: false, message: t('LinkedIn URL is required')},
+                required: { value: false, message: t('LinkedIn URL is required') },
                 pattern: {
                   value: !/^https?:\/\/(www\.)?linkedin\.com\/(in|company|school)\/.+\/?$/,
                   message: t('Please enter a valid LinkedIn URL')
