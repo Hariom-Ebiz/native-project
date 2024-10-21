@@ -47,7 +47,7 @@ const ManageJobs = () => {
   const handleReOpenModal = () => setReopenModalShow(true);
   const handleOpenModal = () => setopenModalShow(true);
   const handleReOpenModalclose = () => { setReopenModalShow(false); setModalContent({}); unregister("apply_before"); unregister("vacancies") }
-  const handleOpenModalclose = () => { setopenModalShow(false);setsavedPostDate(""); }
+  const handleOpenModalclose = () => { setopenModalShow(false); setsavedPostDate(""); }
 
   const { request: getJobDataReq, response: getJobDataResp } = useRequest();
   const { request: postStatusReq, response: postStatusRes } = useRequest();
@@ -62,7 +62,7 @@ const ManageJobs = () => {
   const route = useRouter();
 
   console.log("route query : ", route.query);
-  
+
 
   const [postsList, setPosts] = useState([]);
   const [savedList, setSaved] = useState([]);
@@ -104,7 +104,7 @@ const ManageJobs = () => {
 
   useEffect(() => {
     const { from: start, to: end } = route.query;
-    
+
     if (start && end) {
       setFromDate(start)
       setToDate(end)
@@ -123,15 +123,15 @@ const ManageJobs = () => {
     if (postStatusRes) {
       setSaved(savedList.filter((f) => f.id != postStatusRes.data));
       let find = savedList.find((i) => i.id == postStatusRes.data);
-      
+
       if (find) find['posted_on'] = new Date().toISOString();
       if (find) find['apply_before'] = savedPostDate ? new Date(savedPostDate).toISOString() : new Date().toISOString();
       if (find) find['is_under_review'] = 0;
       if (find) find['job_status'] = "Open";
       setsavedPostDate(new Date().getTime())
-      setPosts([find,...postsList])
-      setTotalDocument(prev => prev+1);
-      setSavedTotalDocument(prev => prev-1)
+      setPosts([find, ...postsList])
+      setTotalDocument(prev => prev + 1);
+      setSavedTotalDocument(prev => prev - 1)
       handleOpenModalclose()
     }
   }, [postStatusRes])
@@ -149,7 +149,7 @@ const ManageJobs = () => {
 
       setPosts(postsList.map((m) => {
         if (m.id == statusChangeRes.data) {
-          return { ...m,job_status: (m.is_active == 1) ? "Canceled" : "Open", is_active: (m.is_active == 1) ? 0 : 1 };
+          return { ...m, job_status: (m.is_active == 1) ? "Canceled" : "Open", is_active: (m.is_active == 1) ? 0 : 1 };
         } else {
           return m;
         }
@@ -171,11 +171,11 @@ const ManageJobs = () => {
 
   useEffect(() => {
     if (getJobDataResp) {
-      console.log(">>>>>>>>>>>>> req",getJobDataResp.requestFor)
-      if(getJobDataResp.requestFor == "saved"){
+      console.log(">>>>>>>>>>>>> req", getJobDataResp.requestFor)
+      if (getJobDataResp.requestFor == "saved") {
         setSavedTotalDocument(getJobDataResp?.savedJobsTotalDocuments)
         setSaved(getJobDataResp?.savedPosts || []);
-      } else if(getJobDataResp.requestFor == "posted") {
+      } else if (getJobDataResp.requestFor == "posted") {
         setTotalDocument(getJobDataResp?.totalDocuments)
         setPosts(getJobDataResp.posts || [])
       } else {
@@ -204,7 +204,7 @@ const ManageJobs = () => {
   function perPageFunction(d) {
     setSelectPerPage(d);
     setPage(1);
-    filterData(fromDate, toDate, 1, d,route.query.isSaved == "true" ? "saved" : "posted")
+    filterData(fromDate, toDate, 1, d, route.query.isSaved == "true" ? "saved" : "posted")
   }
 
   function handleClickPage(p) {
@@ -216,8 +216,8 @@ const ManageJobs = () => {
   function handleDateRange(start, end) {
     setToDate(end.format("YYYY/MM/DD"));
     setFromDate(start.format("YYYY/MM/DD"));
-    console.log("route.query.isSaved",route.query.isSaved);
-    
+    console.log("route.query.isSaved", route.query.isSaved);
+
     route.push(`/employer/manage-jobs?isSaved=${route.query.isSaved ?? "false"}&from=${start.format("YYYY/MM/DD")}&to=${end.format("YYYY/MM/DD")}`)
     filterData(start.format("YYYY/MM/DD"), end.format("YYYY/MM/DD"), 1, selectPerPage, "all")
     // handleClickPage(1);
@@ -232,7 +232,7 @@ const ManageJobs = () => {
       toast.success("Job reopened successfully.");
       setPosts(postsList.map((m) => {
         if (m.id == jobReopenResp.data) {
-          return { ...m,is_hired: 0,is_under_review: 0, is_active: 1, job_status: "Open", vacancies: watch("vacancies"), apply_before: new Date(watch("apply_before")) };
+          return { ...m, is_hired: 0, is_under_review: 0, is_active: 1, job_status: "Open", vacancies: watch("vacancies"), apply_before: new Date(watch("apply_before")) };
         } else {
           return m;
         }
@@ -244,10 +244,10 @@ const ManageJobs = () => {
   const sortingHandler = (sortBy) => {
     if (currentSort.sortBy == sortBy) {
       const newOrder = currentSort.order === "asc" ? "desc" : "asc";
-      getJobDataReq("GET", `employer/job-post/all?from=${fromDate}&to=${moment(toDate).format("YYYY/MM/DD")}&page=${page}&per_page=${selectPerPage}&sortBy=${sortBy}&order=${newOrder}&requestFor=${route.query.isSaved == "true" ? "saved": "posted"}`)
+      getJobDataReq("GET", `employer/job-post/all?from=${fromDate}&to=${moment(toDate).format("YYYY/MM/DD")}&page=${page}&per_page=${selectPerPage}&sortBy=${sortBy}&order=${newOrder}&requestFor=${route.query.isSaved == "true" ? "saved" : "posted"}`)
       setCurrentSort({ sortBy, order: newOrder });
     } else {
-      getJobDataReq("GET", `employer/job-post/all?from=${fromDate}&to=${moment(toDate).format("YYYY/MM/DD")}&page=${page}&per_page=${selectPerPage}&sortBy=${sortBy}&order=desc&requestFor=${route.query.isSaved == "true" ? "saved": "posted"}`)
+      getJobDataReq("GET", `employer/job-post/all?from=${fromDate}&to=${moment(toDate).format("YYYY/MM/DD")}&page=${page}&per_page=${selectPerPage}&sortBy=${sortBy}&order=desc&requestFor=${route.query.isSaved == "true" ? "saved" : "posted"}`)
       setCurrentSort({ sortBy, order: "desc" });
     }
   }
@@ -295,7 +295,7 @@ const ManageJobs = () => {
             </div>
             <div className={styles.company_message_right}>
               {
-                (fromDate || toDate) && 
+                (fromDate || toDate) &&
                 <DateRangePicker initialSettings={{ startDate: moment(fromDate).format("MM/DD/YYYY"), endDate: moment(toDate).format("MM/DD/YYYY") }} onCallback={(start, end) => handleDateRange(start, end)}>
                   <input type="text" className="form-control col-4" />
                 </DateRangePicker>
@@ -307,15 +307,16 @@ const ManageJobs = () => {
             <h3 className={styles.table_heading}>{t("Job List")}</h3>
             <div className={`tabsBlock  ${styles.data_tableTabs}`}>
               <Tabs defaultActiveKey={(route.query.isSaved == "true") ? t("Saved Jobs") : t("Posted Jobs")}
-                onSelect={(v) => {(
-                  v == t("Saved Jobs")) ? route.push(`?isSaved=true&from=${fromDate}&to=${moment(toDate).format("YYYY/MM/DD")}`) : route.push(`?from=${fromDate}&to=${moment(toDate).format("YYYY/MM/DD")}`)
-                  
+                onSelect={(v) => {
+                  (
+                    v == t("Saved Jobs")) ? route.push(`?isSaved=true&from=${fromDate}&to=${moment(toDate).format("YYYY/MM/DD")}`) : route.push(`?from=${fromDate}&to=${moment(toDate).format("YYYY/MM/DD")}`)
+
                   getJobDataReq("GET", `employer/job-post/all?from=${fromDate}&to=${moment(toDate).format("YYYY/MM/DD")}&page=${1}&per_page=${10}&sortBy=${currentSort.sortBy}&order=${currentSort.order}&requestFor=all`)
                   setPage(1);
                   setSelectPerPage(10)
                 }
                 } >
-                <Tab eventKey={t("Posted Jobs")} title={t("Posted Jobs")+"(" + totalDocument + ")"}>
+                <Tab eventKey={t("Posted Jobs")} title={t("Posted Jobs") + "(" + totalDocument + ")"}>
                   <div className={`table-responsive ${styles.data_table}`}>
                     <table className={`table mb-0 ${styles.table_min_height}`}>
                       <thead>
@@ -333,7 +334,7 @@ const ManageJobs = () => {
                             return <th
                               onClick={() => h.isSortable ? sortingHandler(h.sortBy) : null}
                               className={`${h.isSortable ? styles.sortable : ""} ${sortOrder}`}
-                              style={{textAlign: (h.heading != t("Roles")) ? "center" : "left"}}
+                              style={{ textAlign: (h.heading != t("Roles")) ? "center" : "left" }}
                             >
                               <span className={styles.sortable_arrow}>{h.heading}</span></th>
                           })}
@@ -348,20 +349,20 @@ const ManageJobs = () => {
                             </tr>
                             :
                             postsList.map((d) => {
-                              console.log("d",d);
+                              console.log("d", d);
                               let st = styles.job_status;
                               switch (d.job_status) {
-                                case "Under Review": 
+                                case "Under Review":
                                   st = styles.job_under_review;
                                   break;
-                                case "Hired": 
+                                case "Hired":
                                   st = styles.job_hired
                                   break;
-                                case "Canceled": 
+                                case "Canceled":
                                   st = styles.job_closed
                                   break;
                               }
-                              
+
                               return (
                                 <tr>
                                   <td style={{ textAlign: "left" }}><Link href={"/employer/job-detail/" + d.id}>{d.title?.substring(0, 40)}{(d.title.length <= 40) ? "" : "..."}</Link></td>
@@ -372,12 +373,12 @@ const ManageJobs = () => {
 
                                     <span className={st}>
                                       {d.job_status}
-                                      <span style={{marginLeft: "6px"}}>
+                                      <span style={{ marginLeft: "6px" }}>
                                         <OverlayTrigger
                                           delay={{ hide: 450, show: 300 }}
                                           overlay={(props) => (
                                             <Tooltip {...props}>
-                                              {"" +  getSatusDescription(d.job_status) + "" || <>&nbsp;</>}
+                                              {"" + getSatusDescription(d.job_status) + "" || <>&nbsp;</>}
                                             </Tooltip>
                                           )}
                                           placement="top"
@@ -419,19 +420,19 @@ const ManageJobs = () => {
                                   <td>{moment(d.apply_before).format("DD MMM YYYY")}</td>
                                   <td><span className={styles.job_type}>{d.job_type ?? "N/A"}</span></td>
                                   <td>
-                                    
+
                                     <div className={styles.new_applicants_box}>
-                                        <p className={styles.new_applicants_track}>
-                                          
-                                            <span>(New)</span> 
-                                            {d.total_unseen} / 
-                                            </p>
-                                        <span className={styles.interview_status}>
-                                            <span style={{fontSize: "12px"}}>(Total) </span>
+                                      <p className={styles.new_applicants_track}>
+
+                                        <span>(New)</span>
+                                        {d.total_unseen} /
+                                      </p>
+                                      <span className={styles.interview_status}>
+                                        <span style={{ fontSize: "12px" }}>(Total) </span>
                                         {d.totalAppliedCandidates}</span>
                                     </div>
-                                   
-                                    </td>
+
+                                  </td>
                                   <td>{d.total_unlocked_profiles}</td>
                                   <td>{d.total_shortlisted}</td>
                                   <td>{d.total_interviewed}</td>
@@ -457,17 +458,17 @@ const ManageJobs = () => {
                                           Action
                                         </button> */}
                                       </Dropdown.Toggle>
-                                      <Dropdown.Menu className="py-0" style={{textAlign: "center"}}>
+                                      <Dropdown.Menu className="py-0" style={{ textAlign: "center" }}>
                                         {
-                                          (d.is_hired || d.is_under_review || d.is_active == "0") 
-                                          ? <Dropdown.Item onClick={() => {handleReOpenModal(); setModalContent({id: d.id, hired: d.total_selected, vacancy: d.vacancies}), reset({"vacancies": d.vacancies})}}>{t("Re-Open Job")}</Dropdown.Item>
-                                          : <Dropdown.Item onClick={() => jobStatus(d.id, { is_active: d.is_active == 0 ? 1 : 0 })}>{d.is_active == 0 ? t("Active Job") : t("Cancel")}</Dropdown.Item>
+                                          (d.is_hired || d.is_under_review || d.is_active == "0")
+                                            ? <Dropdown.Item onClick={() => { handleReOpenModal(); setModalContent({ id: d.id, hired: d.total_selected, vacancy: d.vacancies }), reset({ "vacancies": d.vacancies }) }}>{t("Re-Open Job")}</Dropdown.Item>
+                                            : <Dropdown.Item onClick={() => jobStatus(d.id, { is_active: d.is_active == 0 ? 1 : 0 })}>{d.is_active == 0 ? t("Active Job") : t("Cancel")}</Dropdown.Item>
                                         }
-                                        
+
                                         {
                                           d.is_under_review ? <Dropdown.Item onClick={() => jobStatus(d.id, { is_active: d.is_active == 0 ? 1 : 0 })}>{t("Cancel")}</Dropdown.Item> : <></>
                                         }
-                                        
+
                                       </Dropdown.Menu>
                                     </Dropdown>
                                   </td>
@@ -481,12 +482,12 @@ const ManageJobs = () => {
                   </div>
 
                 </Tab>
-                <Tab eventKey={t("Saved Jobs")} title={t("Saved Jobs")+"(" + savedTotalDocument + ")"}>
+                <Tab eventKey={t("Saved Jobs")} title={t("Saved Jobs") + "(" + savedTotalDocument + ")"}>
                   <div className={`table-responsive ${styles.data_table}`}>
                     <table className={`table mb-0 ${styles.table_min_height}`} >
                       <thead>
                         <tr>
-                        {savedJobTableHeading.map(h => {
+                          {savedJobTableHeading.map(h => {
                             let sortOrder = "";
                             if (h.isSortable && h.sortBy == currentSort.sortBy) {
                               if (currentSort.order == "desc") {
@@ -499,7 +500,7 @@ const ManageJobs = () => {
                             return <th
                               onClick={() => h.isSortable ? sortingHandler(h.sortBy) : null}
                               className={`${h.isSortable ? styles.sortable : ""} ${sortOrder}`}
-                              style={{textAlign: (h.heading != t("Roles")) ? "center" : "left"}}
+                              style={{ textAlign: (h.heading != t("Roles")) ? "center" : "left" }}
                             >
                               <span className={styles.sortable_arrow}>{h.heading}</span></th>
                           })}
@@ -516,11 +517,11 @@ const ManageJobs = () => {
                             savedList.map((d) => {
                               return (
                                 <tr>
-                                  <td className="yy" style={{textAlign: "left"}}><Link href={"/employer/job-detail/" + d.id}>{d.title?.substring(0, 40)}{(d.title.length <= 40) ? "" : "..."}</Link></td>
-                                  <td style={{textAlign: "center"}}>{moment(d.created_at).format("DD MMM YYYY")}</td>
-                                  <td style={{textAlign: "center"}}>{moment(d.apply_before).format("DD MMM YYYY")}</td>
-                                  <td style={{textAlign: "center"}}><span className={styles.job_type}>{d.job_type ?? "N/A"}</span></td>
-                                  <td className={styles.highlight_td} style={{textAlign: "center"}}>
+                                  <td className="yy" style={{ textAlign: "left" }}><Link href={"/employer/job-detail/" + d.id}>{d.title?.substring(0, 40)}{(d.title.length <= 40) ? "" : "..."}</Link></td>
+                                  <td style={{ textAlign: "center" }}>{moment(d.created_at).format("DD MMM YYYY")}</td>
+                                  <td style={{ textAlign: "center" }}>{moment(d.apply_before).format("DD MMM YYYY")}</td>
+                                  <td style={{ textAlign: "center" }}><span className={styles.job_type}>{d.job_type ?? "N/A"}</span></td>
+                                  <td className={styles.highlight_td} style={{ textAlign: "center" }}>
                                     <Dropdown>
                                       <Dropdown.Toggle className={styles.DropdownBtn} id="dropdown-basic">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -541,12 +542,12 @@ const ManageJobs = () => {
                                       </Dropdown.Toggle>
 
 
-                                      <Dropdown.Menu align="auto" className="py-0" style={{textAlign: "center"}}>
+                                      <Dropdown.Menu align="auto" className="py-0" style={{ textAlign: "center" }}>
                                         <Dropdown.Item href={`/employer/edit-job?id=${d.id}`}>{t("Edit Job")}</Dropdown.Item>
                                         {
                                           (moment(d.apply_before).add(1, "day").startOf("day").valueOf() > new Date().valueOf()) ?
                                             (
-                                              <Dropdown.Item onClick={() => {changePostStatus(d.id, { is_posted: 1 })}}>{t("Post Job")}</Dropdown.Item>
+                                              <Dropdown.Item onClick={() => { changePostStatus(d.id, { is_posted: 1 }) }}>{t("Post Job")}</Dropdown.Item>
                                             )
                                             :
                                             (
@@ -651,7 +652,7 @@ const ManageJobs = () => {
                       </defs>
                     </svg>
                     <h2 className={styles.modal_heading}> {t("What's This Section About? A Quick Overview!")}</h2>
-                  </div>     
+                  </div>
                 </Modal.Header>
                 <Modal.Body>
                   <div className={styles.modal_content} style={{ textAlign: "left" }}>
@@ -701,25 +702,25 @@ const ManageJobs = () => {
 
                     <div style={{ marginTop: "10px" }}>
                       {/* <label className={styles.label_text}>{t("manage_vacancy",{1:modalContent.vacancy,2: modalContent.hired})}</label> */}
-                      <label className={styles.label_text}>{t("Number of Vacancies",{1:modalContent.vacancy,2: modalContent.hired})}</label>
-                      <input 
+                      <label className={styles.label_text}>{t("Number of Vacancies", { 1: modalContent.vacancy, 2: modalContent.hired })}</label>
+                      <input
                         type="number"
                         name="vacancies"
                         className="form-control"
                         defaultValue={modalContent.vacancy}
                         placeholder="Enter vacancy"
                         {
-                          ...register("vacancies", {
-                            required: {
-                              value: true,
-                              message: "This field is required."
-                            },
-                            validate: {
-                              isNumber: (value) => !isNaN(value) || "Only numbers are allowed",
-                              minValue: (value) => value > 0 || "Number must be greater than 0"
-                            }
-                          })
+                        ...register("vacancies", {
+                          required: {
+                            value: true,
+                            message: "This field is required."
+                          },
+                          validate: {
+                            isNumber: (value) => !isNaN(value) || "Only numbers are allowed",
+                            minValue: (value) => value > 0 || "Number must be greater than 0"
                           }
+                        })
+                        }
                       />
                       {errors.vacancies && (<span className="text-danger">{errors.vacancies.message}</span>)}
                     </div>
@@ -732,7 +733,7 @@ const ManageJobs = () => {
                   </Button>
                 </Modal.Footer>
               </Modal>
-                          {console.log("savedPostDate", savedPostDate)}
+              {console.log("savedPostDate", savedPostDate)}
 
               <Modal
                 className="successfull_popup"
@@ -754,7 +755,7 @@ const ManageJobs = () => {
                         type="date"
                         placeholder="eg: 20.05.2023"
                         min={new Date().toISOString().split("T")[0]}
-                        onChange={(e)=> {
+                        onChange={(e) => {
                           setsavedPostDate(e.target.value)
                         }}
                         value={savedPostDate && new Date(savedPostDate).toISOString().split("T")[0]}
@@ -764,8 +765,8 @@ const ManageJobs = () => {
                   </div>
                 </Modal.Body>
                 <Modal.Footer>
-                  <Button className={styles.send_invitation_btn} variant="primary" disabled={new Date(new Date(savedPostDate).toDateString()) < new Date(new Date().toDateString())} onClick={()=> {
-                    changePostStatus(postJobId, { is_posted: 1,  apply_before: new Date(savedPostDate)})
+                  <Button className={styles.send_invitation_btn} variant="primary" disabled={new Date(new Date(savedPostDate).toDateString()) < new Date(new Date().toDateString())} onClick={() => {
+                    changePostStatus(postJobId, { is_posted: 1, apply_before: new Date(savedPostDate) })
                   }}>
                     {t("Post Job")}
                   </Button>
