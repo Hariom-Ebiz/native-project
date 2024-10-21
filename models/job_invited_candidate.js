@@ -7,7 +7,7 @@ exports.create = async (data) => {
       .then(function (record) {
         resolve({ status: true, data: record });
       })
-      .catch( (error) => {
+      .catch((error) => {
         console.log("errrr", error)
         resolve({ status: false, data: error });
       });
@@ -73,13 +73,13 @@ exports.getAllJobCategories = async (user_id) => {
       .groupBy('job_categories.id', 'job_categories.name')
       .then(async function (record) {
         await DB("job_categories")
-        .select("job_categories.id", "job_categories.name","ejp.title")
-        .leftJoin("employer_job_posts as ejp", function () {
-          this.on("job_categories.id", "ejp.job_category")
-            .andOn('ejp.is_posted', '=', 1)
-            .andOn('ejp.is_delete', '=', 0)
-            .andOn('ejp.is_active', '=', 1);
-        })
+          .select("job_categories.id", "job_categories.name", "ejp.title")
+          .leftJoin("employer_job_posts as ejp", function () {
+            this.on("job_categories.id", "ejp.job_category")
+              .andOn('ejp.is_posted', '=', 1)
+              .andOn('ejp.is_delete', '=', 0)
+              .andOn('ejp.is_active', '=', 1);
+          })
         resolve(record);
       })
       .catch(function (error) {
@@ -201,21 +201,21 @@ exports.getSalaryRange = async (user_id) => {
 }
 
 exports.getJobSeekerInvitationsList = async (filter, jobFilter, user_id, pagination) => {
-  console.log("user_id",user_id);
-  
+  console.log("user_id", user_id);
+
   try {
-  
+
     query = DB("job_invited_candidate")
-    .leftJoin("employer_job_posts", "job_invited_candidate.job_id","=","employer_job_posts.id")
-      .select("job_invited_candidate.created_at as invitation_date","employer_job_posts.id", "employer_job_posts.posted_on", "employer_job_posts.area", "job_seeker_skills.skill_name", "employer_job_posts.created_at", "employer_job_posts.vacancies", "employer_job_posts.salary_range_from", "employer_job_posts.salary_range_to", "employer_job_posts.salary_currency", "employer_job_posts.hide_salary_range", "employer_job_posts.is_confidential", "employer_job_posts.title", "company_profile.company_name", "company_profile.logo", "job_types.name as job_type_name", "employer_job_posts.other_job_category" , "job_categories.name as job_category_name", "job_categories.id as job_category_id", "cities.name as city_name", "countries.name as country_name", "areas.name as area_name", "carrier_levels.name as career_level_name",
-        "carrier_levels.id as career_level_id","employer_job_posts.other_area","job_types.id as job_type_id",
+      .leftJoin("employer_job_posts", "job_invited_candidate.job_id", "=", "employer_job_posts.id")
+      .select("job_invited_candidate.created_at as invitation_date", "employer_job_posts.id", "employer_job_posts.posted_on", "employer_job_posts.apply_before", "employer_job_posts.area", "job_seeker_skills.skill_name", "employer_job_posts.created_at", "employer_job_posts.vacancies", "employer_job_posts.salary_range_from", "employer_job_posts.salary_range_to", "employer_job_posts.salary_currency", "employer_job_posts.hide_salary_range", "employer_job_posts.is_confidential", "employer_job_posts.title", "company_profile.company_name", "company_profile.logo", "job_types.name as job_type_name", "employer_job_posts.other_job_category", "job_categories.name as job_category_name", "job_categories.id as job_category_id", "cities.name as city_name", "countries.name as country_name", "areas.name as area_name", "carrier_levels.name as career_level_name",
+        "carrier_levels.id as career_level_id", "employer_job_posts.other_area", "job_types.id as job_type_id",
         // DB.raw("COUNT(job_seeker_applied_jobs.job_id) as totalApplied"),
         DB.raw(`SUM(CASE WHEN job_seeker_applied_jobs.job_seeker_id = ${user_id} THEN 1 ELSE 0 END) as isApplied`),
         DB.raw("COUNT(job_post_screening_questions.job_post_id) as totalAskedQuestions"),
         DB.raw("COUNT(job_seeker_skills.id) as totalMatchedSkills")
       )
       .where(filter)
-      .andWhere("job_invited_candidate.job_seeker_id","=",user_id)
+      .andWhere("job_invited_candidate.job_seeker_id", "=", user_id)
       .leftJoin("carrier_levels", "employer_job_posts.career_level", "carrier_levels.id")
       .leftJoin("company_profile", "company_profile.employer_id", "=", "employer_job_posts.employer_id")
       .leftJoin("job_categories", "job_categories.id", "=", "employer_job_posts.job_category")
@@ -228,7 +228,7 @@ exports.getJobSeekerInvitationsList = async (filter, jobFilter, user_id, paginat
       .leftJoin("employer_job_post_skills", "employer_job_posts.id", "=", "employer_job_post_skills.job_post_id")
       .leftJoin("job_seeker_skills", function () {
         this.on("employer_job_post_skills.skill", "=", DB.raw("job_seeker_skills.skill_name"))
-        .andOn("job_seeker_skills.job_seeker_id", "=", user_id)
+          .andOn("job_seeker_skills.job_seeker_id", "=", user_id)
       })
       .groupBy(
         "job_invited_candidate.id",
@@ -251,13 +251,13 @@ exports.getJobSeekerInvitationsList = async (filter, jobFilter, user_id, paginat
       query.where(qb => {
         jobFilter.salary_range_from.forEach((range, i) => {
           if (range.includes('or below')) {
-            const value = Number(range.replace(' or below', '').replace(",",""));
+            const value = Number(range.replace(' or below', '').replace(",", ""));
             qb.orWhere('employer_job_posts.salary_range_from', '<=', value);
           } else if (range.includes('or above')) {
-            const value = Number(range.replace(' or above', '').replace(",",""));
+            const value = Number(range.replace(' or above', '').replace(",", ""));
             qb.orWhere('employer_job_posts.salary_range_from', '>=', value);
           } else {
-            const [min, max] = range.split(' - ').map((s)=>Number(s.replace(",", "")));
+            const [min, max] = range.split(' - ').map((s) => Number(s.replace(",", "")));
             qb.orWhere(function () {
               this.where('employer_job_posts.salary_range_from', '>=', min)
                 .andWhere('employer_job_posts.salary_range_from', '<', max);
@@ -267,14 +267,14 @@ exports.getJobSeekerInvitationsList = async (filter, jobFilter, user_id, paginat
       })
     }
 
-    if (jobFilter?.salary_range_from?.length) {  
+    if (jobFilter?.salary_range_from?.length) {
       query.andWhere("employer_job_posts.hide_salary_range", "=", "0")
     }
 
     if (jobFilter.title) {
       query.andWhere("title", "like", `%${jobFilter.title}%`)
     }
-    
+
 
     if (pagination?.sortBy == "created_at") {
       query.orderBy("employer_job_posts.posted_on", pagination.order)
@@ -287,35 +287,35 @@ exports.getJobSeekerInvitationsList = async (filter, jobFilter, user_id, paginat
     const totalDocuments = await query;
 
     const jobTypes = {
-      "Full Time": {count: 0,id: -1},
-      "Part Time": {count: 0,id: -2},
-      "Internship": {count: 0,id: -3},
-      "Volunteering": {count: 0,id: -4},
-      "Freelance / Project": {count: 0,id: -5}
+      "Full Time": { count: 0, id: -1 },
+      "Part Time": { count: 0, id: -2 },
+      "Internship": { count: 0, id: -3 },
+      "Volunteering": { count: 0, id: -4 },
+      "Freelance / Project": { count: 0, id: -5 }
     };
-    
+
     const jobCategories = {
-      "Project Management": {count: 0,id: -1}, 
-      "Supply Chain": {count: 0,id: -2}, 
-      "HR": {count: 0,id: -3}, 
-      "IT": {count: 0,id: -4}, 
-      "Data Science": {count: 0,id: -5}, 
-      "Finance": {count: 0,id: -6}, 
-      "Accounting": {count: 0,id: -7}, 
-      "Marketing": {count: 0,id: -8}, 
-      "Sales": {count: 0,id: -9}, 
-      'Business Development': {count: 0,id: -10}, 
-      "Engineering": {count: 0,id: -11}, 
-      "Others": {count: 0,id: -12}
+      "Project Management": { count: 0, id: -1 },
+      "Supply Chain": { count: 0, id: -2 },
+      "HR": { count: 0, id: -3 },
+      "IT": { count: 0, id: -4 },
+      "Data Science": { count: 0, id: -5 },
+      "Finance": { count: 0, id: -6 },
+      "Accounting": { count: 0, id: -7 },
+      "Marketing": { count: 0, id: -8 },
+      "Sales": { count: 0, id: -9 },
+      'Business Development': { count: 0, id: -10 },
+      "Engineering": { count: 0, id: -11 },
+      "Others": { count: 0, id: -12 }
     };
 
     const jobLevels = {
-      "Student": {count: 0, text: "Student", id: -1},
-      "EntryLevel": {count: 0, text: "Entry Level", id: -2},
-      "1-3YearsExperience": {count: 0, text: "1-3 Years Experience", id: -3},
-      "3-5YearsExperience": {count: 0, text: "3-5 Years Experience", id: -4},
-      "5-10YearsExperience": {count: 0, text: "5-10 Years Experience", id: -5},
-      "10+YearsExperience": {count: 0, text: "10+ Years Experience", id: -6},
+      "Student": { count: 0, text: "Student", id: -1 },
+      "EntryLevel": { count: 0, text: "Entry Level", id: -2 },
+      "1-3YearsExperience": { count: 0, text: "1-3 Years Experience", id: -3 },
+      "3-5YearsExperience": { count: 0, text: "3-5 Years Experience", id: -4 },
+      "5-10YearsExperience": { count: 0, text: "5-10 Years Experience", id: -5 },
+      "10+YearsExperience": { count: 0, text: "10+ Years Experience", id: -6 },
     }
 
     const salaryRanges = {
@@ -331,34 +331,34 @@ exports.getJobSeekerInvitationsList = async (filter, jobFilter, user_id, paginat
 
     const defaultCategories = ["Project Management", "Supply Chain", "HR", "IT", "Data Science", "Finance", "Accounting", "Marketing", "Sales", 'Business Development', "Engineering"]
 
-    console.log("totalDocuments",totalDocuments);
-    
+    console.log("totalDocuments", totalDocuments);
+
     if (Array.isArray(totalDocuments)) {
       for await (const d of totalDocuments) {
-        console.log(">>>>>>>> ",d);
-        
+        console.log(">>>>>>>> ", d);
+
         if (d.job_type_name) {
-          jobTypes[d.job_type_name] = {count: jobTypes[d.job_type_name].count + 1, id: d.job_type_id};
+          jobTypes[d.job_type_name] = { count: jobTypes[d.job_type_name].count + 1, id: d.job_type_id };
         }
 
         if (d.job_category_name) {
           if (!defaultCategories.includes(d.job_category_name)) {
-            jobCategories['Others'] = {count: jobCategories['Others'].count + 1, id: 0};
+            jobCategories['Others'] = { count: jobCategories['Others'].count + 1, id: 0 };
           } else {
-            jobCategories[d.job_category_name] = {count: jobCategories[d.job_category_name].count + 1, id: d.job_category_id};
+            jobCategories[d.job_category_name] = { count: jobCategories[d.job_category_name].count + 1, id: d.job_category_id };
           }
         }
 
-        if(d.career_level_id){          
-          if(!jobLevels.hasOwnProperty(String(d.career_level_name).replace(/ /g, ""))){
-            jobLevels[String(d.career_level_name).replace(/ /g, "")] = {count: 1, text: d.career_level_name, id: d.career_level_id}
+        if (d.career_level_id) {
+          if (!jobLevels.hasOwnProperty(String(d.career_level_name).replace(/ /g, ""))) {
+            jobLevels[String(d.career_level_name).replace(/ /g, "")] = { count: 1, text: d.career_level_name, id: d.career_level_id }
           } else {
-            jobLevels[String(d.career_level_name).replace(/ /g, "")] = {count: jobLevels[String(d.career_level_name).replace(/ /g, "")].count + 1, id: d.career_level_id, text: d.career_level_name}
+            jobLevels[String(d.career_level_name).replace(/ /g, "")] = { count: jobLevels[String(d.career_level_name).replace(/ /g, "")].count + 1, id: d.career_level_id, text: d.career_level_name }
           }
         }
 
-        if(d.salary_range_from){
-          if(!d.hide_salary_range){
+        if (d.salary_range_from) {
+          if (!d.hide_salary_range) {
             if (d.salary_range_from >= 5 && d.salary_range_from <= 10000) {
               salaryRanges['5 - 10,000'] += 1;
             } else if (d.salary_range_from > 10000 && d.salary_range_from <= 15000) {
@@ -394,7 +394,7 @@ exports.getJobSeekerInvitationsList = async (filter, jobFilter, user_id, paginat
       }
     }
 
-    return { status: true, data: data, totalDocuments: totalDocuments.length, jobTypes: jobTypes, jobCategories: jobCategories,jobLevels: jobLevels,salaryRanges: salaryRanges }
+    return { status: true, data: data, totalDocuments: totalDocuments.length, jobTypes: jobTypes, jobCategories: jobCategories, jobLevels: jobLevels, salaryRanges: salaryRanges }
   } catch (error) {
     console.log("error : ", error)
     return { status: false, data: error }

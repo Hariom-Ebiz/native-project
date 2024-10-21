@@ -56,7 +56,7 @@ const CandidateSubscriptionRoutes = require("./routes/candidateSubscription")
 const subscriberRoutes = require("./routes/employerSubscriber")
 const candidateSubscriberRoutes = require("./routes/candidateSubscriber")
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4042;
 
 const app = express();
 app.use(express.json());

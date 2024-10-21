@@ -1,6 +1,6 @@
 // const config = require("./config");
 
-const KnexQueryBuilder = require("knex/lib/query/querybuilder");
+// const KnexQueryBuilder = require("knex/lib/query/querybuilder");
 
 
 const db_config = {
