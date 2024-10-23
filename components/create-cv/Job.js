@@ -28,7 +28,7 @@ const Job = ({
 
   const { request: requestCity, response: responseCity } = useRequest();
 
-  const months = ["1","2","3","4","5","6","7","8","9","10","11","12"];
+  const months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
   const [years, setYears] = useState([]);
 
   const deleteHandler = (uuid) => {
@@ -174,14 +174,14 @@ const Job = ({
         }
         register={register}
         errors={errors}
-        onChangeFunc={(e)=>{
+        onChangeFunc={(e) => {
           activateOtherJobType(e.target.value);
         }}
       />
       {otherJobTypeActive && (
         <TextInput
           label="Please Specify Other"
-          placeholder="" 
+          placeholder=""
           name={`other_job_type_${uuid}`}
           registerFields={{
             required: {
@@ -230,7 +230,7 @@ const Job = ({
         }
         register={register}
         errors={errors}
-        onChangeFunc={(e)=>{
+        onChangeFunc={(e) => {
           activateOtherJobCategory(e.target.value);
         }}
       />
@@ -273,7 +273,7 @@ const Job = ({
         }
         register={register}
         errors={errors}
-        onChangeFunc={(e)=>{
+        onChangeFunc={(e) => {
           activateOtherIndustry(e.target.value);
         }}
       />
@@ -393,7 +393,7 @@ const Job = ({
               id={`start_month_${uuid}`}
               placeholder="start"
               name={`start_month_${uuid}`}
-               {...register(`start_month_${uuid}`, {
+              {...register(`start_month_${uuid}`, {
                 required: {
                   value: false,
                   message: "This field is required.",
@@ -403,7 +403,7 @@ const Job = ({
               <option>Select Month</option>
               {
                 months.map((m) => (
-                  <option value={m}>{m}</option> 
+                  <option value={m}>{m}</option>
                 ))
               }
             </select>
@@ -459,7 +459,7 @@ const Job = ({
               //     message: "This field is required.",
               //   },
               // })}
-               {...register(`end_month_${uuid}`, {
+              {...register(`end_month_${uuid}`, {
                 required: {
                   value: false,
                   message: "This field is required.",
@@ -469,9 +469,12 @@ const Job = ({
             >
               <option value={0}>Select Month</option>
               {
-                months.map((m) => (
-                  <option value={m}>{m}</option> 
-                ))
+                getValues(`end_year_${uuid}`) == new Date().getFullYear() ? months.filter(m => Number(m) <= new Date().getMonth() + 1).map(m => (
+                  <option value={m}>{m}</option>
+                )) :
+                  months.map((m) => (
+                    <option value={m}>{m}</option>
+                  ))
               }
             </select>
             {errors?.[`end_month_${uuid}`] && (
@@ -486,6 +489,11 @@ const Job = ({
             <label className={styles.form_label}> End Year</label>
             <select
               className={`${styles.form_control} ${styles.date_fix} form-control`}
+              onChange={(e)=>{
+                if(getValues(`end_month_${uuid}`) && Number(e.target.value) == new Date().getFullYear() && getValues(`end_year_${uuid}`) > new Date().getMonth() + 1){
+                  setValue(`end_month_${uuid}`, 0);
+                }
+              }}
               id={`end_year_${uuid}`}
               placeholder="End Year"
               name={`end_year_${uuid}`}

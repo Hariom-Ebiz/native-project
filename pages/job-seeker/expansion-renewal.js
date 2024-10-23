@@ -229,7 +229,7 @@ const ExploreOurPackages = ({ subscriptionList, packagesList }) => {
             <h2>🎉 Welcome Aboard! 🎉</h2>
             <br />
             <h6>Welcome to our exclusive community! A confirmation email is on its way.</h6>
-            <h6>Ready to begin your journey? Let's get <Link href={(modalContent.course_type == "career_coaching") ? "/course?query=true" : (modalContent.course_type == "standout") ? "/standout?query=true" : (modalContent.course_type == "functional_mastery") ? "/functional-mastery?query=true" : ""}> started! </Link></h6>
+            <h6>Ready to begin your journey? <Link href={(modalContent.course_type == "career_coaching") ? "/course?query=true" : (modalContent.course_type == "standout") ? "/standout?query=true" : (modalContent.course_type == "functional_mastery") ? "/functional-mastery?query=true" : ""}>Let's get started! </Link></h6>
           </div>
         </Modal.Body>
       </Modal>

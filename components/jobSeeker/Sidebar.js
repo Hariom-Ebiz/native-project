@@ -35,9 +35,9 @@ const Sidebar = () => {
       pathname == "/job-seeker/edit-cv/step3" ||
       pathname == "/job-seeker/edit-cv/step4" ||
       pathname == "/job-seeker/edit-cv/step5" ||
-      pathname == "/job-seeker/job-list" || 
+      pathname == "/job-seeker/job-list" ||
       pathname == "/job-seeker/application-history" ||
-      pathname == "/job-seeker/invitations" || 
+      pathname == "/job-seeker/invitations" ||
       pathname === "/interview-skills" ||
       pathname == "/interview-skills/lesson/description/[id]" ||
       pathname == "/interview-skills/lesson/[id]" ||
@@ -51,13 +51,15 @@ const Sidebar = () => {
     } else if (
       pathname === "/course" ||
       pathname == "/course/lesson/description/[id]" ||
-      pathname == "/course/lesson/[id]" || 
+      pathname == "/course/lesson/[id]" ||
       pathname === "/standout" ||
+      pathname === "/standout/chapter/[id]" ||
       pathname == "/standout/chapter/lesson/description/[id]" ||
       pathname == "/standout/chapter/lesson/[id]" ||
       pathname === "/functional-mastery" ||
+      pathname === "/functional-mastery/chapter/[id]" ||
       pathname == "/functional-mastery/chapter/lesson/description/[id]" ||
-      pathname == "/functional-mastery/chapter/lesson/[id]" 
+      pathname == "/functional-mastery/chapter/lesson/[id]"
     ) {
       setMenuState({
         jobs: false,
@@ -110,7 +112,7 @@ const Sidebar = () => {
                 cvStep === 5
                   ? router.replace("/job-seeker/view-cv")
                   : router.replace("/job-seeker/create-cv/step1");
-                    dispatch(unsetModal());
+                dispatch(unsetModal());
               }}
             >
               {" "}
@@ -162,9 +164,8 @@ const Sidebar = () => {
             <Link
               href="/job-seeker/dashboard"
               onClick={() => dispatch(openAuthSidebar(false))}
-              className={`${
-                pathname == "/job-seeker/dashboard" ? "active" : ""
-              }`}
+              className={`${pathname == "/job-seeker/dashboard" ? "active" : ""
+                }`}
             >
               <span className="icon_holder">
                 <svg
@@ -205,9 +206,8 @@ const Sidebar = () => {
             <Link
               href="/job-seeker/my-profile"
               onClick={() => dispatch(openAuthSidebar(false))}
-              className={`${
-                pathname == "/job-seeker/my-profile" ? "active" : ""
-              }`}
+              className={`${pathname == "/job-seeker/my-profile" ? "active" : ""
+                }`}
             >
               <span className="icon_holder svg_icon_size">
                 <svg
@@ -282,9 +282,8 @@ const Sidebar = () => {
               <span className="arrowIconSubmenu"></span>
             </a>
             <ul
-              className={`subMenuSide collapse ${
-                menuState.jobs ? "show" : ""
-              }`}
+              className={`subMenuSide collapse ${menuState.jobs ? "show" : ""
+                }`}
               id="historySUbmenu"
             >
               <li>
@@ -295,21 +294,20 @@ const Sidebar = () => {
                       : `/job-seeker/create-cv/step${cvStep ? cvStep : "1"}`
                   }
                   onClick={() => dispatch(openAuthSidebar(false))}
-                  className={`${
-                    cvStep == 5
-                      ? pathname == `/job-seeker/view-cv` ||
-                        pathname == `/job-seeker/edit-cv/step1` ||
-                        pathname == `/job-seeker/edit-cv/step2` ||
-                        pathname == `/job-seeker/edit-cv/step3` ||
-                        pathname == `/job-seeker/edit-cv/step4` ||
-                        pathname == `/job-seeker/edit-cv/step5`
-                        ? "active"
-                        : ""
-                      : pathname ==
-                        `/job-seeker/create-cv/step${cvStep ? cvStep : "1"}`
+                  className={`${cvStep == 5
+                    ? pathname == `/job-seeker/view-cv` ||
+                      pathname == `/job-seeker/edit-cv/step1` ||
+                      pathname == `/job-seeker/edit-cv/step2` ||
+                      pathname == `/job-seeker/edit-cv/step3` ||
+                      pathname == `/job-seeker/edit-cv/step4` ||
+                      pathname == `/job-seeker/edit-cv/step5`
                       ? "active"
                       : ""
-                  }`}
+                    : pathname ==
+                      `/job-seeker/create-cv/step${cvStep ? cvStep : "1"}`
+                      ? "active"
+                      : ""
+                    }`}
                 >
                   <span>
                     <svg
@@ -448,8 +446,8 @@ const Sidebar = () => {
                   {t("My Job Applications")}
                 </Link>
               </li>
-              
-              
+
+
               <li>
                 <Link
                   href={"/job-seeker/invitations"}
@@ -490,12 +488,12 @@ const Sidebar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/interview-skills?query=true" 
+                <Link href="/interview-skills?query=true"
                   onClick={() => dispatch(openAuthSidebar(false))}
                   className={
                     pathname == `/interview-skills` ||
-                    pathname == "/interview-skills/lesson/description/[id]" ||
-                    pathname == "/interview-skills/lesson/[id]"
+                      pathname == "/interview-skills/lesson/description/[id]" ||
+                      pathname == "/interview-skills/lesson/[id]"
                       ? "active"
                       : ""
                   }>
@@ -535,7 +533,7 @@ const Sidebar = () => {
               </li>
 
               <li>
-                <Link href="/job-seeker/aptitude-test" 
+                <Link href="/job-seeker/aptitude-test"
                   onClick={() => dispatch(openAuthSidebar(false))}
                   className={
                     pathname.includes('/job-seeker/aptitude-test')
@@ -698,9 +696,9 @@ const Sidebar = () => {
               className={`subMenuLink collapsed`}
               data-bs-toggle="collapse"
               data-bs-target="#historySUbmenu2"
-              // className={`subMenuLink collapsed ${
-              //   pathname == `/course` ? "active" : ""
-              // }`}
+            // className={`subMenuLink collapsed ${
+            //   pathname == `/course` ? "active" : ""
+            // }`}
             >
               <span className="icon_holder">
                 <svg
@@ -738,9 +736,8 @@ const Sidebar = () => {
               <span className="arrowIconSubmenu"></span>
             </a>
             <ul
-              className={`subMenuSide collapse ${
-                menuState.career ? "show" : ""
-              }`}
+              className={`subMenuSide collapse ${menuState.career ? "show" : ""
+                }`}
               id="historySUbmenu2"
             >
               <li>
@@ -749,8 +746,8 @@ const Sidebar = () => {
                   onClick={() => dispatch(openAuthSidebar(false))}
                   className={
                     pathname == `/course` ||
-                    pathname == "/course/lesson/description/[id]" ||
-                    pathname == "/course/lesson/[id]"
+                      pathname == "/course/lesson/description/[id]" ||
+                      pathname == "/course/lesson/[id]"
                       ? "active"
                       : ""
                   }
@@ -795,8 +792,9 @@ const Sidebar = () => {
                   onClick={() => dispatch(openAuthSidebar(false))}
                   className={
                     pathname == `/functional-mastery` ||
-                    pathname == "/functional-mastery/chapter/lesson/description/[id]" ||
-                    pathname == "/functional-mastery/chapter/lesson/[id]"
+                      pathname == "/functional-mastery/chapter/[id]" ||
+                      pathname == "/functional-mastery/chapter/lesson/description/[id]" ||
+                      pathname == "/functional-mastery/chapter/lesson/[id]"
                       ? "active"
                       : ""
                   }
@@ -836,12 +834,13 @@ const Sidebar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/standout?query=true" 
+                <Link href="/standout?query=true"
                   onClick={() => dispatch(openAuthSidebar(false))}
                   className={
                     pathname == `/standout` ||
-                    pathname == "/standout/chapter/lesson/description/[id]" ||
-                    pathname == "/standout/chapter/lesson/[id]"
+                      pathname == "/standout/chapter/[id]" ||
+                      pathname == "/standout/chapter/lesson/description/[id]" ||
+                      pathname == "/standout/chapter/lesson/[id]"
                       ? "active"
                       : ""
                   }>
@@ -958,122 +957,120 @@ const Sidebar = () => {
             </a>
           </li> */}
           <li className="dash_nav_item">
-              <a
-                href="#"
-                className="subMenuLink collapsed"
-                data-bs-toggle="collapse"
-                data-bs-target="#subscription"
-              >
-                <span className="icon_holder">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M7 4C6.73478 4 6.48043 4.10536 6.29289 4.29289C6.10536 4.48043 6 4.73478 6 5V19C6 19.2652 6.10536 19.5196 6.29289 19.7071C6.48043 19.8946 6.73478 20 7 20H17C17.2652 20 17.5196 19.8946 17.7071 19.7071C17.8946 19.5196 18 19.2652 18 19L18 9.41421L12.5859 4.00011L7 4ZM4.87868 2.87868C5.44129 2.31607 6.20435 2 7 2H12.586C13.1163 2.00011 13.6251 2.21086 14.0001 2.58589M14.0001 2.58589L19.414 7.99979C19.414 7.99975 19.414 7.99982 19.414 7.99979C19.789 8.37476 19.9999 8.88345 20 9.41379V19C20 19.7957 19.6839 20.5587 19.1213 21.1213C18.5587 21.6839 17.7957 22 17 22H7C6.20435 22 5.44129 21.6839 4.87868 21.1213C4.31607 20.5587 4 19.7957 4 19V5C4 4.20435 4.31607 3.44129 4.87868 2.87868M8 12C8 11.4477 8.44772 11 9 11H15C15.5523 11 16 11.4477 16 12C16 12.5523 15.5523 13 15 13H9C8.44772 13 8 12.5523 8 12ZM8 16C8 15.4477 8.44772 15 9 15H15C15.5523 15 16 15.4477 16 16C16 16.5523 15.5523 17 15 17H9C8.44772 17 8 16.5523 8 16Z"
-                      fill="currentcolor"
-                    />
-                    <rect
-                      x="8"
-                      y="11"
-                      width="8"
-                      height="2"
-                      rx="1"
-                      fill="currentcolor"
-                    />
-                    <rect
-                      x="8"
-                      y="15"
-                      width="8"
-                      height="2"
-                      rx="1"
-                      fill="currentcolor"
-                    />
-                  </svg>
-                </span>
-                <span className="title_dash_nav">{t("Subscription")}</span>
-                <span className="arrowIconSubmenu"></span>
-              </a>
-              <ul 
-                 className={`subMenuSide collapse ${
-                    menuState.subscription ? "show" : ""
-                  }`}
-                id="subscription">
-                <li>
-                  <Link href={(was_subscriber) ? "/job-seeker/expansion-renewal" : "/job-seeker/explore-our-packages"} className={(pathname == "/job-seeker/explore-our-packages" || pathname == "/job-seeker/expansion-renewal") ? "active" : ""}>
-                    <span>
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M7 4C6.73478 4 6.48043 4.10536 6.29289 4.29289C6.10536 4.48043 6 4.73478 6 5V19C6 19.2652 6.10536 19.5196 6.29289 19.7071C6.48043 19.8946 6.73478 20 7 20H17C17.2652 20 17.5196 19.8946 17.7071 19.7071C17.8946 19.5196 18 19.2652 18 19L18 9.41421L12.5859 4.00011L7 4ZM4.87868 2.87868C5.44129 2.31607 6.20435 2 7 2H12.586C13.1163 2.00011 13.6251 2.21086 14.0001 2.58589M14.0001 2.58589L19.414 7.99979C19.414 7.99982 19.414 7.99975 19.414 7.99979C19.789 8.37476 19.9999 8.88345 20 9.41379V19C20 19.7957 19.6839 20.5587 19.1213 21.1213C18.5587 21.6839 17.7957 22 17 22H7C6.20435 22 5.44129 21.6839 4.87868 21.1213C4.31607 20.5587 4 19.7957 4 19V5C4 4.20435 4.31607 3.44129 4.87868 2.87868M8 12C8 11.4477 8.44772 11 9 11H15C15.5523 11 16 11.4477 16 12C16 12.5523 15.5523 13 15 13H9C8.44772 13 8 12.5523 8 12ZM8 16C8 15.4477 8.44772 15 9 15H15C15.5523 15 16 15.4477 16 16C16 16.5523 15.5523 17 15 17H9C8.44772 17 8 16.5523 8 16Z"
-                          fill="currentcolor"
-                        />
-                        <rect
-                          x="8"
-                          y="11"
-                          width="8"
-                          height="2"
-                          rx="1"
-                          fill="currentcolor"
-                        />
-                        <rect
-                          x="8"
-                          y="15"
-                          width="8"
-                          height="2"
-                          rx="1"
-                          fill="currentcolor"
-                        />
-                      </svg>{" "}
-                    </span>
-                    {t("Explore Our Packages")}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/job-seeker/my-membership" className={`${pathname == "/job-seeker/my-membership" ? "active" : ""
+            <a
+              href="#"
+              className="subMenuLink collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#subscription"
+            >
+              <span className="icon_holder">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M7 4C6.73478 4 6.48043 4.10536 6.29289 4.29289C6.10536 4.48043 6 4.73478 6 5V19C6 19.2652 6.10536 19.5196 6.29289 19.7071C6.48043 19.8946 6.73478 20 7 20H17C17.2652 20 17.5196 19.8946 17.7071 19.7071C17.8946 19.5196 18 19.2652 18 19L18 9.41421L12.5859 4.00011L7 4ZM4.87868 2.87868C5.44129 2.31607 6.20435 2 7 2H12.586C13.1163 2.00011 13.6251 2.21086 14.0001 2.58589M14.0001 2.58589L19.414 7.99979C19.414 7.99975 19.414 7.99982 19.414 7.99979C19.789 8.37476 19.9999 8.88345 20 9.41379V19C20 19.7957 19.6839 20.5587 19.1213 21.1213C18.5587 21.6839 17.7957 22 17 22H7C6.20435 22 5.44129 21.6839 4.87868 21.1213C4.31607 20.5587 4 19.7957 4 19V5C4 4.20435 4.31607 3.44129 4.87868 2.87868M8 12C8 11.4477 8.44772 11 9 11H15C15.5523 11 16 11.4477 16 12C16 12.5523 15.5523 13 15 13H9C8.44772 13 8 12.5523 8 12ZM8 16C8 15.4477 8.44772 15 9 15H15C15.5523 15 16 15.4477 16 16C16 16.5523 15.5523 17 15 17H9C8.44772 17 8 16.5523 8 16Z"
+                    fill="currentcolor"
+                  />
+                  <rect
+                    x="8"
+                    y="11"
+                    width="8"
+                    height="2"
+                    rx="1"
+                    fill="currentcolor"
+                  />
+                  <rect
+                    x="8"
+                    y="15"
+                    width="8"
+                    height="2"
+                    rx="1"
+                    fill="currentcolor"
+                  />
+                </svg>
+              </span>
+              <span className="title_dash_nav">{t("Subscription")}</span>
+              <span className="arrowIconSubmenu"></span>
+            </a>
+            <ul
+              className={`subMenuSide collapse ${menuState.subscription ? "show" : ""
+                }`}
+              id="subscription">
+              <li>
+                <Link href={(was_subscriber) ? "/job-seeker/expansion-renewal" : "/job-seeker/explore-our-packages"} className={(pathname == "/job-seeker/explore-our-packages" || pathname == "/job-seeker/expansion-renewal") ? "active" : ""}>
+                  <span>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M7 4C6.73478 4 6.48043 4.10536 6.29289 4.29289C6.10536 4.48043 6 4.73478 6 5V19C6 19.2652 6.10536 19.5196 6.29289 19.7071C6.48043 19.8946 6.73478 20 7 20H17C17.2652 20 17.5196 19.8946 17.7071 19.7071C17.8946 19.5196 18 19.2652 18 19L18 9.41421L12.5859 4.00011L7 4ZM4.87868 2.87868C5.44129 2.31607 6.20435 2 7 2H12.586C13.1163 2.00011 13.6251 2.21086 14.0001 2.58589M14.0001 2.58589L19.414 7.99979C19.414 7.99982 19.414 7.99975 19.414 7.99979C19.789 8.37476 19.9999 8.88345 20 9.41379V19C20 19.7957 19.6839 20.5587 19.1213 21.1213C18.5587 21.6839 17.7957 22 17 22H7C6.20435 22 5.44129 21.6839 4.87868 21.1213C4.31607 20.5587 4 19.7957 4 19V5C4 4.20435 4.31607 3.44129 4.87868 2.87868M8 12C8 11.4477 8.44772 11 9 11H15C15.5523 11 16 11.4477 16 12C16 12.5523 15.5523 13 15 13H9C8.44772 13 8 12.5523 8 12ZM8 16C8 15.4477 8.44772 15 9 15H15C15.5523 15 16 15.4477 16 16C16 16.5523 15.5523 17 15 17H9C8.44772 17 8 16.5523 8 16Z"
+                        fill="currentcolor"
+                      />
+                      <rect
+                        x="8"
+                        y="11"
+                        width="8"
+                        height="2"
+                        rx="1"
+                        fill="currentcolor"
+                      />
+                      <rect
+                        x="8"
+                        y="15"
+                        width="8"
+                        height="2"
+                        rx="1"
+                        fill="currentcolor"
+                      />
+                    </svg>{" "}
+                  </span>
+                  {t("Explore Our Packages")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/job-seeker/my-membership" className={`${pathname == "/job-seeker/my-membership" ? "active" : ""
                   }`}>
-                    <span>
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M21 13.255C18.1405 14.4112 15.0844 15.0038 12 15C8.817 15 5.78 14.38 3 13.255M12 12H12.01M16 6V4C16 3.46957 15.7893 2.96086 15.4142 2.58579C15.0391 2.21071 14.5304 2 14 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4V6H16ZM5 20H19C19.5304 20 20.0391 19.7893 20.4142 19.4142C20.7893 19.0391 21 18.5304 21 18V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V18C3 18.5304 3.21071 19.0391 3.58579 19.4142C3.96086 19.7893 4.46957 20 5 20Z"
-                          stroke="currentcolor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    {t("My Membership")}
-                  </Link>
-                </li>
-               
-              </ul>
-            </li>
+                  <span>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21 13.255C18.1405 14.4112 15.0844 15.0038 12 15C8.817 15 5.78 14.38 3 13.255M12 12H12.01M16 6V4C16 3.46957 15.7893 2.96086 15.4142 2.58579C15.0391 2.21071 14.5304 2 14 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4V6H16ZM5 20H19C19.5304 20 20.0391 19.7893 20.4142 19.4142C20.7893 19.0391 21 18.5304 21 18V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V18C3 18.5304 3.21071 19.0391 3.58579 19.4142C3.96086 19.7893 4.46957 20 5 20Z"
+                        stroke="currentcolor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  {t("My Membership")}
+                </Link>
+              </li>
+
+            </ul>
+          </li>
 
           <li className="dash_nav_item">
             <Link
-                href="/job-seeker/help-center"
-                onClick={() => dispatch(openAuthSidebar(false))}
-                className={`${
-                  pathname == "/job-seeker/help-center" ? "active" : ""
+              href="/job-seeker/help-center"
+              onClick={() => dispatch(openAuthSidebar(false))}
+              className={`${pathname == "/job-seeker/help-center" ? "active" : ""
                 }`}
             >
               <span className="icon_holder">

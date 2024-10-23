@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { createAxiosCookies } from "@/fn";
 import FlagLang from "@/components/FlagLang";
@@ -19,7 +19,7 @@ import { toast } from "react-toastify";
 import { ReactSelectInput, SelectInput } from "@/components/cv/inputFields";
 import { useForm } from "react-hook-form";
 
-const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
+const ExploreOurPackages = ({ subscriptionList, packagesList }) => {
   const {
     getValues,
     register,
@@ -33,12 +33,12 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
 
   const [modalContent, setModalContent] = useState({})
   const [subsPopup, setSubspopup] = useState(false);
-  const handleWelcomeClose = () => {setSubspopup(false);setModalContent({})}
+  const handleWelcomeClose = () => { setSubspopup(false); setModalContent({}) }
   const handleWelcomeShow = () => setSubspopup(true);
 
   const [subsDone, setSubsDone] = useState(false);
   const handleSubsDoneOpen = () => setSubsDone(true);
-  const handleSubsDoneClose = () => {setSubsDone(false); setModalContent({})};
+  const handleSubsDoneClose = () => { setSubsDone(false); setModalContent({}) };
 
   const [alertShow, setAlertShow] = useState(was_subscriber ? true : false);
   const closeAlertShow = () => setAlertShow(false)
@@ -50,7 +50,7 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
   const dispatch = useDispatch();
 
   const getSubscription = () => {
-    request("POST", "subscribe/candidate/", {subscription_id: modalContent.id, course_type: modalContent.course_type, sub_course_type: null})
+    request("POST", "subscribe/candidate/", { subscription_id: modalContent.id, course_type: modalContent.course_type, sub_course_type: null })
   }
 
   useEffect(() => {
@@ -63,8 +63,8 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
     if (response) {
       toast.success("Subscription completed successfully.")
       let finalObj = {
-        "career_coaching": (modalContent.course_type == "career_coaching") ? 1 : subscription.career_coaching, 
-        "standout": (modalContent.course_type == "standout") ? 1 : subscription.standout, 
+        "career_coaching": (modalContent.course_type == "career_coaching") ? 1 : subscription.career_coaching,
+        "standout": (modalContent.course_type == "standout") ? 1 : subscription.standout,
         "functional_mastery": (modalContent.course_type == "functional_mastery") ? [...subscription.functional_mastery, "2"] : subscription.functional_mastery
       }
       dispatch(updateSubscription(finalObj));
@@ -76,11 +76,11 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
   }, [response])
 
   const getFunctionMasterySubscription = (data) => {
-    console.log("data : ",data);
-    
+    console.log("data : ", data);
+
     if (Array.isArray(data.functional_mastery_courses)) {
       request("POST", "subscribe/candidate/", { subscription_id: modalContent.id, course_type: modalContent.course_type, sub_course_type: data.functional_mastery_courses })
-    } else if(typeof data.functional_mastery_courses == "string"){
+    } else if (typeof data.functional_mastery_courses == "string") {
       request("POST", "subscribe/candidate/", { subscription_id: modalContent.id, course_type: modalContent.course_type, sub_course_type: [data.functional_mastery_courses] })
     }
   }
@@ -109,7 +109,7 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
 
 
 
-          <div className={`${styles.plans_box}`} ref={sliderRef} tabIndex={0} style={{outline: "0"}}>
+          <div className={`${styles.plans_box}`} ref={sliderRef} tabIndex={0} style={{ outline: "0" }}>
 
             {
               subscriptionList.map(d => {
@@ -132,15 +132,15 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
 
                           {
                             !was_subscriber ?
-                            d.is_free ? (<button className={styles.price_btn} >Selected</button>) :
+                              d.is_free ? (<button className={styles.price_btn} >Selected</button>) :
 
-                            (d.course_type !== "functional_mastery" && subscription[d.course_type] == "0") ? 
-                            (
+                                (d.course_type !== "functional_mastery" && subscription[d.course_type] == "0") ?
+                                  (
 
-                              <button className={styles.price_btn} onClick={() => { handleWelcomeShow(); setModalContent(d) }} >Get started</button>
-                            ) : (d.course_type == "functional_mastery") ? 
-                              <button className={styles.price_btn} onClick={() => { setModalContent(d); handleShowCourseType() }} >Get started</button>
-                            : (<></>)
+                                    <button className={styles.price_btn} onClick={() => { handleWelcomeShow(); setModalContent(d) }} >Get started</button>
+                                  ) : (d.course_type == "functional_mastery") ?
+                                    <button className={styles.price_btn} onClick={() => { setModalContent(d); handleShowCourseType() }} >Get started</button>
+                                    : (<></>)
                               : (<></>)
                           }
                         </div>
@@ -190,11 +190,11 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
           <h1 className={`modal-title ${styles.modal_title}`} id="exampleModalLabel">Let’s Level Up! 🚀
           </h1>
         </Modal.Header>
-        
-          <Modal.Body>
+
+        <Modal.Body>
           <div className={styles.modal_content} style={{ textAlign: "left" }}>
             <h5>Pick one of the Functional Mastery Journeys below to boost your skills and advance your career
-            </h5> 
+            </h5>
             {/* "{modalContent.title} ({modalContent.price?.toLocaleString()} EGP)" ?*/}
           </div>
         </Modal.Body>
@@ -204,21 +204,21 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
           {Array.isArray(subscription['functional_mastery']) && packagesList.every(r => subscription['functional_mastery'].includes(String(r.id))) ? <p>You have already purchased all Courses.</p> : <div>
             <ul className={styles.course_list_block}>
               {console.log("subscription['functional_mastery']", subscription['functional_mastery'])}
-              {Array.isArray(packagesList) && packagesList.length > 0 && 
-              <select {...register("functional_mastery_courses", { required: "Please select atleast one course" })}>
-                <option disabled value={""} selected>Select a Course</option>
+              {Array.isArray(packagesList) && packagesList.length > 0 &&
+                <select {...register("functional_mastery_courses", { required: "Please select atleast one course" })}>
+                  <option disabled value={""} selected>Select a Course</option>
 
-                {Array.isArray(packagesList) && packagesList.map(p => {
-                return !subscription['functional_mastery'].includes(String(p.id)) && 
-                    <option value={p.id}>{p.title}</option>
-                })}
+                  {Array.isArray(packagesList) && packagesList.map(p => {
+                    return !subscription['functional_mastery'].includes(String(p.id)) &&
+                      <option value={p.id}>{p.title}</option>
+                  })}
                 </select>}
-                {errors?.["functional_mastery_courses"] && (
-          <div className="invalid-feedback d-block">
-            {errors?.["functional_mastery_courses"].message}
-          </div>
-        )}
-              
+              {errors?.["functional_mastery_courses"] && (
+                <div className="invalid-feedback d-block">
+                  {errors?.["functional_mastery_courses"].message}
+                </div>
+              )}
+
               {/* {Array.isArray(packagesList) && packagesList.length > 3 && <li className={styles.course_list_items}>
                 <button className={styles.add_more} onClick={() => setIsShowAllPackages(!isShowAllPackages)}>
                   {isShowAllPackages ? "Show less !" : "And more!"}
@@ -232,7 +232,7 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
           </div>}
         </Modal.Body>
       </Modal>
-      
+
       <Modal
         className="successfull_popup"
         show={subsPopup}
@@ -242,7 +242,7 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
       >
         <Modal.Header closeButton>
           <h3>
-          Let’s Level Up! 🚀
+            Let’s Level Up! 🚀
             {/* {modalContent.title} Subscription ({modalContent.price?.toLocaleString()} EGP) */}
           </h3>
         </Modal.Header>
@@ -251,7 +251,7 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
 
         <Modal.Body>
           <div className={styles.modal_content} style={{ textAlign: "left" }}>
-            <h5>You’re about to unlock {modalContent.title} , your gateway to mastering new skills and advancing your career!</h5> 
+            <h5>You’re about to unlock {modalContent.title} , your gateway to mastering new skills and advancing your career!</h5>
             {/* "{modalContent.title} ({modalContent.price?.toLocaleString()} EGP)" ?*/}
           </div>
         </Modal.Body>
@@ -267,20 +267,20 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
         size="lg"
         centered
       >
-          <Modal.Header closeButton style={{borderBottom: "none"}}>
-          </Modal.Header>
-          <Modal.Body>
-            <div className="modal_inner">
-              {/* <div className="icon_block">
+        <Modal.Header closeButton style={{ borderBottom: "none" }}>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="modal_inner">
+            {/* <div className="icon_block">
                 <img src="/img/icon.png" alt="" />
               </div> */}
 
-              <h2>🎉 Welcome Aboard! 🎉</h2>
-              <br />
-              <h6>Welcome to our exclusive community! A confirmation email is on its way.</h6>
-              <h6>Ready to begin your journey? Let's get <Link href={(modalContent.course_type == "career_coaching") ? "/course?query=true" : (modalContent.course_type == "standout") ? "/standout?query=true" : (modalContent.course_type == "functional_mastery") ? "/functional-mastery?query=true" : ""}> started! </Link></h6>
-            </div>
-          </Modal.Body>
+            <h2>🎉 Welcome Aboard! 🎉</h2>
+            <br />
+            <h6>Welcome to our exclusive community! A confirmation email is on its way.</h6>
+            <h6>Ready to begin your journey? <Link href={(modalContent.course_type == "career_coaching") ? "/course?query=true" : (modalContent.course_type == "standout") ? "/standout?query=true" : (modalContent.course_type == "functional_mastery") ? "/functional-mastery?query=true" : ""}>Let's get started! </Link></h6>
+          </div>
+        </Modal.Body>
       </Modal>
 
       <Modal
@@ -290,7 +290,7 @@ const ExploreOurPackages = ({ subscriptionList,packagesList }) => {
         size="lg"
         centered
       >
-          <Modal.Header closeButton style={{textAlign: "center"}}>
+        <Modal.Header closeButton style={{ textAlign: "center" }}>
           <h1 className="modal-title fs-5" id="exampleModalLabel">Exclusive Access Alert! 🚀</h1>
         </Modal.Header>
         <Modal.Body>
