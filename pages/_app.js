@@ -88,7 +88,7 @@ const App = ({ Component, pageProps }) => {
     (isProtected) => {
       if (loggedIn && isProtected === false) {
         // if (role === 1) {
-          router.replace("/employer/dashboard");
+        router.replace("/employer/dashboard");
         // }
       }
     },

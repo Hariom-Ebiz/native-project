@@ -32,7 +32,7 @@ export default function Document() {
         <link href="css/font-awesome.css" rel="stylesheet" />
         <link href="css/animation.css" rel="stylesheet" /> */}
       </Head>
-      <body className="body_bg_color" id="body_lang_css" style={{overflowX: "hidden"}}>
+      <body className="body_bg_color" id="body_lang_css" style={{ overflowX: "hidden" }}>
         <Main />
         <NextScript />
 

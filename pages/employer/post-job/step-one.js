@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Form from "react-bootstrap/Form";
 import styles from "@/styles/post_a_job.module.css";
 import { useForm, useFormContext, useWatch } from "react-hook-form";
@@ -38,7 +38,7 @@ const StepOne = ({
   const {
     register,
     handleSubmit,
-    formState: { errors,isValid  },
+    formState: { errors, isValid },
     clearErrors,
     reset,
     getValues,
@@ -63,21 +63,21 @@ const StepOne = ({
 
   const [selectedArea, setSelectedArea] = useState(getValues("area"))
 
-  useEffect(()=> {
-    if(careerLevelLableRef.current){
+  useEffect(() => {
+    if (careerLevelLableRef.current) {
       register()
     }
-  },[register])
+  }, [register])
 
   const checkValidation = async () => {
 
     const isFormValid = await trigger();
     if (!isFormValid) {
-      handleSubmit(()=> {})();
+      handleSubmit(() => { })();
     }
 
     if (!getValues("career_level")) {
-      if(careerLevelLableRef.current){
+      if (careerLevelLableRef.current) {
         careerLevelLableRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
       }
       setError("career_level", { message: t("This Field is required") })
@@ -88,7 +88,7 @@ const StepOne = ({
     }
 
     if (!getValues("salary_range_from") || !getValues("salary_range_to")) {
-      if(salaryRangeLableRef.current){
+      if (salaryRangeLableRef.current) {
         salaryRangeLableRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
       }
       setError("salary_range_from", { message: t("This Field is required") })
@@ -324,7 +324,7 @@ const StepOne = ({
                   </label>
                 </div>
               ))}
-               {errors.post_type && (
+              {errors.post_type && (
                 <span className="invalid-feedback d-block">
                   {errors.post_type.message}
                 </span>
@@ -355,7 +355,7 @@ const StepOne = ({
                 })}
                 onChange={(e) => {
                   setSelectedJobCategory(e.target.value)
-                  if(e.target.value){
+                  if (e.target.value) {
                     delete errors.job_category;
                   }
                 }}
@@ -421,7 +421,7 @@ const StepOne = ({
                       (c) => c.id == e.target.value
                     );
 
-                    if(e.target.value){
+                    if (e.target.value) {
                       clearErrors("city")
                       clearErrors("country")
                     }
@@ -452,7 +452,7 @@ const StepOne = ({
                   getArea(e.target.value)
                   const selectedCity = city.find((c) => c.id == e.target.value);
                   setCityName(selectedCity?.name || "");
-                  if(e.target.value){
+                  if (e.target.value) {
                     clearErrors("city")
                     // delete errors.city;
                   }
@@ -481,7 +481,7 @@ const StepOne = ({
                   setSelectedArea(e.target.value)
                   const selecetdAreaName = area.find((c) => c.id == e.target.value);
                   setAreaName(selecetdAreaName?.name || "");
-                  if(e.target.value){
+                  if (e.target.value) {
                     delete errors.area;
                   }
                 }}
@@ -809,13 +809,13 @@ const StepOne = ({
               <label className={styles.label_text}>{t("Optional")}</label>
               <Form.Control
                 as="textarea"
-                placeholder={`${t("e.g.")} ${t("Commissions")} ${t("and")} ${t("bonuses")}`} 
+                placeholder={`${t("e.g.")} ${t("Commissions")} ${t("and")} ${t("bonuses")}`}
                 rows={5}
                 name="salary_details"
                 {...register("salary_details", {
                   required: false,
-                  setValueAs: (v) => {v = v.trim(); v = v.replace(/ \s/g, ""); return v},
-                  
+                  setValueAs: (v) => { v = v.trim(); v = v.replace(/ \s/g, ""); return v },
+
                 })}
               />
             </div>
@@ -834,30 +834,32 @@ const StepOne = ({
           <div className="col-sm-8">
             <div className={`  ${styles.post_job_right_section}`}>
               {/* <label className={styles.label_text}>Number of Vacancies</label> */}
-              <input 
-                  type="number"
-                  name="vacancies"
-                  min={1}
-                  className="form-control"
-                  placeholder="Enter vacancy"
-                  onKeyDown={(e) => {
-                    if (e.key === '-' || e.key === 'e' || e.key === '+') {
-                      e.preventDefault();
-                    }
-                  }}
-                  {
-                    ...register("vacancies", {
-                      required: {
-                        value: true,
-                        message: "This field is required."
-                      },
-                      validate: {
-                        isNumber: (value) => !isNaN(value) || "Only numbers are allowed",
-                        minValue: (value) => value > 0 || "Number must be greater than 0"
-                      }
-                    })
-                    }
-                />
+              <input
+                type="number"
+                name="vacancies"
+                min={1}
+                max={10000}
+                step={9999999}
+                className="form-control"
+                placeholder="Enter vacancy"
+                onKeyDown={(e) => {
+                  if (e.key === '-' || e.key === 'e' || e.key === '+') {
+                    e.preventDefault();
+                  }
+                }}
+                {
+                ...register("vacancies", {
+                  required: {
+                    value: true,
+                    message: "This field is required."
+                  },
+                  validate: {
+                    isNumber: (value) => !isNaN(value) || "Only numbers are allowed",
+                    minValue: (value) => value > 0 || "Number must be greater than 0"
+                  }
+                })
+                }
+              />
               {/* <Form.Select
                 aria-label="Default select example"
                 name="vacancies"
@@ -878,16 +880,16 @@ const StepOne = ({
               </Form.Select> */}
               {
                 errors.vacancies && (
-                    <span className="invalid-feedback d-block">
-                      {errors.vacancies.message}
-                    </span>
-                  )
+                  <span className="invalid-feedback d-block">
+                    {errors.vacancies.message}
+                  </span>
+                )
               }
             </div>
           </div>
         </div>
-        
-            
+
+
       </div>
 
       <div className={styles.next_step_btn_block}>
@@ -906,16 +908,16 @@ const StepOne = ({
 export async function getServerSideProps(context) {
   //   createAxiosCookies(context);
 
-    const { lang } = getCookies(context);
-    let lang_code = "en";
-  
-    try {
-      const language = JSON.parse(lang)
-  
-      lang_code = String(language.code).toLowerCase()
-    } catch (error) {
-      lang_code = "en"
-    }
+  const { lang } = getCookies(context);
+  let lang_code = "en";
+
+  try {
+    const language = JSON.parse(lang)
+
+    lang_code = String(language.code).toLowerCase()
+  } catch (error) {
+    lang_code = "en"
+  }
 
   return {
     props: {
