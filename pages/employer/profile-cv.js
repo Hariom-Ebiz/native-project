@@ -491,8 +491,12 @@ useEffect(() => {
                           <img src="/img/error.png" alt="" />
                         </div>
                         <h2 className={styles.popupTitle}>
-                          {t("You don't have a Subsciption.")}
+                          {t("Unlock Your Hiring Potential!")}
                         </h2>
+
+                        <p className={styles.subText}>
+                          {t("Join now to gain access to unlocked CVs and elevate your recruitment game!")}
+                        </p>
                         {
                           <button 
                             className={styles.confirmBtn}
