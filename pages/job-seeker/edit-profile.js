@@ -135,7 +135,7 @@ const EditProfile = ({ profileData, statusData, liveInData }) => {
   };
 
   return (
-    <JobSeekerAuth data={{ title:`Account`}} >
+    <JobSeekerAuth data={{ title: `Account` }} >
       <div className="page_container">
         <div className={` main_content main_bg `} id="body_lang_css">
           <div className={styles.dash_wrapper}>
@@ -155,7 +155,7 @@ const EditProfile = ({ profileData, statusData, liveInData }) => {
                                 type="file"
                                 id="imageUpload"
                                 onChange={handleImage}
-                               // inputref={ref}
+                                // inputref={ref}
                                 accept="image/*"
                               />
                             )}
@@ -163,17 +163,16 @@ const EditProfile = ({ profileData, statusData, liveInData }) => {
                         </div>
 
                         {displayImage || image ? (
-                          <div className={styles.avatar_preview}>
+                          <div className={styles.avatar_preview} >
                             <div
                               id="imagePreview"
                               style={{
-                                backgroundImage: `url(${
-                                  displayImage
+                                backgroundImage: `url(${displayImage
                                     ? displayImage
                                     : image
-                                    ? API + "/" + image
-                                    : "/img/profile.png"
-                                })`,
+                                      ? API + "/" + image
+                                      : "/img/profile.png"
+                                  })`,
                               }}
                             ></div>
                           </div>

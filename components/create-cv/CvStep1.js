@@ -114,15 +114,18 @@ const CvStep1 = ({
                         accept=".png, .jpg, .jpeg"
                         name="profile_pic"
                         onChange={(e) => {
-                          setSelectedProfilePic(e.target.files[0]);
-                          setProfilePicUrl(
-                            URL.createObjectURL(e.target.files[0])
-                          );
-                          setToRemoveProfilePic(false);
+                          const file = e.target.files[0];
+                          if (file) {
+                            setSelectedProfilePic(file);
+                            setProfilePicUrl(URL.createObjectURL(file));
+                            setToRemoveProfilePic(false);
+                          }
+                          e.target.value = null;
                         }}
                       />
                     </div>
                     <div className="mobile_img_block">
+
                       <div className={styles.avatar_preview}>
                         <div
                           id="imagePreview"
@@ -169,6 +172,7 @@ const CvStep1 = ({
                             URL.createObjectURL(e.target.files[0])
                           );
                           setToRemoveCoverPic(false);
+                          e.target.value = null;
                         }}
                       />
                     </div>

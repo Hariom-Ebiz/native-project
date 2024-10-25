@@ -39,8 +39,8 @@ const Step1 = ({ profile, country, nationalityList }) => {
   const [seletedProfilePic, setSelectedProfilePic] = useState(null);
   const [seletedCoverPic, setSelectedCoverPic] = useState(null);
 
-  const [profilePicUrl, setProfilePicUrl] = useState("");
-  const [coverPicUrl, setCoverPicUrl] = useState("");
+  const [profilePicUrl, setProfilePicUrl] = useState(null);
+  const [coverPicUrl, setCoverPicUrl] = useState(null);
 
   const [toRemoveProfilePic, setToRemoveProfilePic] = useState(false);
   const [toRemoveCoverPic, setToRemoveCoverPic] = useState(false);
